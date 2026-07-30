@@ -58,7 +58,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="page-hero">
-        <div className="max-w-[1180px] mx-auto px-7">
+        <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
           <div className="relative z-[2]">
             <nav className="inline-flex items-center gap-2 text-[0.8rem] text-text-light mb-3.5">
               <Link href="/" className="text-gold-dark font-semibold hover:text-gold">Home</Link>
@@ -79,7 +79,7 @@ export default function ContactPage() {
       </section>
 
       <section className="py-[52px] bg-[#FAF6EE]">
-        <div className="max-w-[1180px] mx-auto px-7">
+        <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-3.5 max-w-[860px] mx-auto mt-4">
             <a
               href={`tel:${SITE.phone}`}
@@ -130,7 +130,7 @@ export default function ContactPage() {
       </section>
 
       <section className="py-22 bg-beige">
-        <div className="max-w-[1180px] mx-auto px-7">
+        <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-14 items-start">
             <div>
               <div className="text-[0.72rem] font-[800] tracking-[2px] uppercase text-gold-dark mb-2.5 inline-flex items-center gap-[7px]">

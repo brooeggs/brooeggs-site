@@ -39,6 +39,21 @@ body {
   overflow-x: hidden;
 }
 
+/* Universal section container — consistent horizontal padding across all viewports */
+.section-inner {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (min-width: 640px) {
+  .section-inner { padding-left: 28px; padding-right: 28px; }
+}
+@media (min-width: 1024px) {
+  .section-inner { padding-left: 32px; padding-right: 32px; }
+}
+
 ::selection {
   background: var(--color-gold);
   color: white;
@@ -50,7 +65,7 @@ body {
 ::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
 
 .page-hero {
-  padding: 130px 0 72px;
+  padding: 120px 0 64px;
   background: linear-gradient(135deg, #E8E0C8 0%, #F0EAD6 60%, #f5e8c4 100%);
   position: relative;
   overflow: hidden;

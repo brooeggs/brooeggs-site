@@ -13,25 +13,28 @@ type IconKey = keyof typeof ICON_MAP;
 
 export default function FeaturesStrip() {
   return (
-    <div className="features-strip-bg overflow-hidden">
-      <div className="flex flex-col sm:flex-row items-stretch max-w-[1180px] mx-auto">
-        {FEATURES_STRIP.map((f, i) => {
-          const Icon = ICON_MAP[f.icon as IconKey];
-          return (
-            <div
-              key={i}
-              className="flex-1 flex items-center gap-3 px-6 py-5 text-white border-b sm:border-b-0 sm:border-r border-white/20 last:border-b-0 last:sm:border-r-0 hover:bg-white/10 transition-all duration-300"
-            >
-              <div className="w-[42px] h-[42px] shrink-0 bg-white/18 rounded-full flex items-center justify-center">
-                <Icon size={18} />
+    <div className="features-strip-bg">
+      {/* On mobile: 2-col grid. On md: single row. */}
+      <div className="max-w-[1180px] mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-5">
+          {FEATURES_STRIP.map((f, i) => {
+            const Icon = ICON_MAP[f.icon as IconKey];
+            return (
+              <div
+                key={i}
+                className="flex items-center gap-3 px-5 py-4 text-white border-b md:border-b-0 border-r border-white/15 last:border-r-0 [&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:border-r hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="w-10 h-10 shrink-0 bg-white/15 rounded-full flex items-center justify-center">
+                  <Icon size={17} />
+                </div>
+                <div className="min-w-0">
+                  <strong className="block text-[0.82rem] font-bold leading-tight truncate">{f.title}</strong>
+                  <span className="block text-[0.7rem] opacity-75 mt-0.5 leading-tight truncate">{f.desc}</span>
+                </div>
               </div>
-              <div>
-                <strong className="block text-[0.875rem] font-bold">{f.title}</strong>
-                <span className="block text-[0.72rem] opacity-80 mt-0.5">{f.desc}</span>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );

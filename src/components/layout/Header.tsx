@@ -47,7 +47,7 @@ export default function Header() {
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled
             ? "bg-[rgba(240,234,214,0.97)] backdrop-blur-[10px] border-b border-border-light shadow-sm"
-            : "bg-transparent"
+            : "bg-[rgba(44,26,10,0.35)] backdrop-blur-[4px]"
         }`}
       >
         <nav

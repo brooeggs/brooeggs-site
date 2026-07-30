@@ -49,7 +49,7 @@ const SOCIAL_ITEMS: SocialItem[] = [
 export default function Footer() {
   return (
     <footer className="footer-bg text-white/75 pt-[60px]">
-      <div className="max-w-[1180px] mx-auto px-5 sm:px-7">
+      <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.4fr] gap-x-6 gap-y-10 pb-12 border-b border-white/8">
 
           {/* Brand column */}

@@ -43,7 +43,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="page-hero">
-        <div className="max-w-[1180px] mx-auto px-7">
+        <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
           <div className="relative z-[2]">
             <nav className="inline-flex items-center gap-2 text-[0.8rem] text-text-light mb-3.5">
               <Link href="/" className="text-gold-dark font-semibold hover:text-gold">Home</Link>
@@ -64,7 +64,7 @@ export default function AboutPage() {
       </section>
 
       <section className="py-22 bg-[#FAF6EE]">
-        <div className="max-w-[1180px] mx-auto px-7">
+        <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[72px] items-center">
             <div className="relative">
               <div className="w-full h-[460px] bg-gradient-to-br from-[#f0e2c0] via-[#e6d49c] to-[#d8c47c] rounded-[22px] flex items-center justify-center text-[8rem] shadow-lg">🐓</div>
@@ -116,7 +116,7 @@ export default function AboutPage() {
       <StatsBar />
 
       <section className="py-22 bg-beige">
-        <div className="max-w-[1180px] mx-auto px-7">
+        <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
           <div className="text-center mb-11">
             <div className="inline-flex items-center gap-[7px] text-[0.72rem] font-[800] tracking-[2px] uppercase text-gold-dark mb-2.5">
               <span className="block w-7 h-[1.5px] bg-gold" />Purpose<span className="block w-7 h-[1.5px] bg-gold" />
@@ -140,7 +140,7 @@ export default function AboutPage() {
       </section>
 
       <section className="py-22 bg-dark">
-        <div className="max-w-[1180px] mx-auto px-7">
+        <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
           <div className="text-center mb-11">
             <div className="inline-flex items-center gap-[7px] text-[0.72rem] font-[800] tracking-[2px] uppercase text-gold-bright mb-2.5">
               <span className="block w-7 h-[1.5px] bg-gold-bright" />What We Stand For<span className="block w-7 h-[1.5px] bg-gold-bright" />
@@ -162,7 +162,7 @@ export default function AboutPage() {
       </section>
 
       <section className="py-22 bg-[#FAF6EE]">
-        <div className="max-w-[1180px] mx-auto px-7">
+        <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-[7px] text-[0.72rem] font-[800] tracking-[2px] uppercase text-gold-dark mb-2.5">
               <span className="block w-7 h-[1.5px] bg-gold" />Why Broog&apos;s<span className="block w-7 h-[1.5px] bg-gold" />

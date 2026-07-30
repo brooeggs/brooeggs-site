@@ -11,8 +11,8 @@ const services = [
 export default function IntroSection() {
   return (
     <section className="py-22 bg-white">
-      <div className="max-w-[1180px] mx-auto px-7">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-[72px] items-start">
+      <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-[72px] items-start">
           <div>
             <div className="text-[0.72rem] font-[800] tracking-[2.5px] uppercase text-gold-dark mb-3 flex items-center gap-2">
               <span className="block w-6 h-[1.5px] bg-gold" />Quality Poultry

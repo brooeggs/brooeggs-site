@@ -48,7 +48,7 @@ export default function CTABanner({ title, description, variant = "home" }: CTAB
 
   return (
     <section className="cta-banner">
-      <div className="max-w-[1180px] mx-auto px-7">
+      <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
         <div className="text-center">
           <h2 className="font-heading font-[800] text-[clamp(1.7rem,3.5vw,2.5rem)] text-white mb-2.5">
             {title || c.title}

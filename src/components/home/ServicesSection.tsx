@@ -13,7 +13,7 @@ const services = [
 export default function ServicesSection() {
   return (
     <section className="py-22 bg-cream-dark relative overflow-hidden">
-      <div className="max-w-[1180px] mx-auto px-7">
+      <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-[7px] text-[0.72rem] font-[800] tracking-[2px] uppercase text-gold-dark mb-2.5">
             <span className="block w-7 h-[1.5px] bg-gold" />What We Offer<span className="block w-7 h-[1.5px] bg-gold" />
