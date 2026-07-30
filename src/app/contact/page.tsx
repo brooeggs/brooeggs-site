@@ -80,33 +80,49 @@ export default function ContactPage() {
 
       <section className="py-[52px] bg-[#FAF6EE]">
         <div className="max-w-[1180px] mx-auto px-7">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 max-w-[760px] mx-auto mt-4">
-            <a href={`tel:${SITE.phone}`} className="flex items-center gap-2.5 p-3 border-[1.5px] rounded-lg text-[0.84rem] font-bold text-gold-dark border-gold hover:bg-gold hover:text-white hover:-translate-y-0.5 transition-all duration-300">
-              <Phone size={18} />
-              <div>
-                <strong className="block text-[0.82rem]">Call Us</strong>
-                <span className="text-[0.72rem] opacity-80">{SITE.phoneFormatted}</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-3.5 max-w-[860px] mx-auto mt-4">
+            <a
+              href={`tel:${SITE.phone}`}
+              className="flex items-center gap-2.5 p-3 sm:p-3.5 border-[1.5px] rounded-xl text-[0.82rem] sm:text-[0.84rem] font-bold text-gold-dark border-gold hover:bg-gold hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <Phone size={18} className="shrink-0" />
+              <div className="min-w-0">
+                <strong className="block text-[0.8rem] sm:text-[0.82rem]">Call Us</strong>
+                <span className="text-[0.68rem] sm:text-[0.72rem] opacity-80 truncate block">{SITE.phoneFormatted}</span>
               </div>
             </a>
-            <a href={SITE.whatsappUrl} className="flex items-center gap-2.5 p-3 border-[1.5px] border-[#25D366] rounded-lg text-[0.84rem] font-bold text-[#1a8a3a] hover:bg-[#25D366] hover:text-white hover:-translate-y-0.5 transition-all duration-300" target="_blank" rel="noopener noreferrer">
-              <MessageCircle size={18} />
+            <a
+              href={SITE.whatsappUrl}
+              className="flex items-center gap-2.5 p-3 sm:p-3.5 border-[1.5px] border-[#25D366] rounded-xl text-[0.82rem] sm:text-[0.84rem] font-bold text-[#1a8a3a] hover:bg-[#25D366] hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle size={18} className="shrink-0" />
               <div>
-                <strong className="block text-[0.82rem]">WhatsApp</strong>
-                <span className="text-[0.72rem] opacity-80">Chat Now</span>
+                <strong className="block text-[0.8rem] sm:text-[0.82rem]">WhatsApp</strong>
+                <span className="text-[0.68rem] sm:text-[0.72rem] opacity-80">Chat Now</span>
               </div>
             </a>
-            <a href={`mailto:${SITE.email}`} className="flex items-center gap-2.5 p-3 border-[1.5px] rounded-lg text-[0.84rem] font-bold text-text-mid hover:bg-dark hover:text-white hover:-translate-y-0.5 transition-all duration-300">
-              <Mail size={18} />
-              <div>
-                <strong className="block text-[0.82rem]">Email</strong>
-                <span className="text-[0.72rem] opacity-80">{SITE.email}</span>
+            <a
+              href={`mailto:${SITE.email}`}
+              className="flex items-center gap-2.5 p-3 sm:p-3.5 border-[1.5px] border-border rounded-xl text-[0.82rem] sm:text-[0.84rem] font-bold text-text-mid hover:bg-dark hover:text-white hover:border-dark hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <Mail size={18} className="shrink-0" />
+              <div className="min-w-0">
+                <strong className="block text-[0.8rem] sm:text-[0.82rem]">Email</strong>
+                <span className="text-[0.68rem] sm:text-[0.72rem] opacity-80 truncate block">{SITE.email}</span>
               </div>
             </a>
-            <a href="https://maps.google.com" className="flex items-center gap-2.5 p-3 border-[1.5px] rounded-lg text-[0.84rem] font-bold text-text-mid hover:bg-[#1565C0] hover:text-white hover:-translate-y-0.5 transition-all duration-300" target="_blank" rel="noopener noreferrer">
-              <MapPin size={18} />
+            <a
+              href="https://maps.google.com"
+              className="flex items-center gap-2.5 p-3 sm:p-3.5 border-[1.5px] border-border rounded-xl text-[0.82rem] sm:text-[0.84rem] font-bold text-text-mid hover:bg-[#1565C0] hover:text-white hover:border-[#1565C0] hover:-translate-y-0.5 transition-all duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MapPin size={18} className="shrink-0" />
               <div>
-                <strong className="block text-[0.82rem]">Location</strong>
-                <span className="text-[0.72rem] opacity-80">Tamil Nadu</span>
+                <strong className="block text-[0.8rem] sm:text-[0.82rem]">Location</strong>
+                <span className="text-[0.68rem] sm:text-[0.72rem] opacity-80">Tamil Nadu</span>
               </div>
             </a>
           </div>
