@@ -789,24 +789,26 @@ button { cursor:pointer; font-family:var(--font-body); border:none; background:n
 
 /* === BACK TO TOP + WHATSAPP === */
 .btt-btn {
-  position:fixed; bottom:28px; right:28px;
-  width:44px; height:44px; border-radius:8px;
+  position:fixed; bottom:28px; right:20px;
+  width:44px; height:44px; border-radius:50%;
   background:#C8851A; color:#fff;
   display:flex; align-items:center; justify-content:center;
-  box-shadow:0 4px 16px rgba(200,133,26,.35);
+  font-size:1.1rem; font-weight:700;
+  box-shadow:0 4px 16px rgba(200,133,26,.4);
   opacity:0; visibility:hidden; transition:all 0.3s; z-index:900; cursor:pointer; border:none;
 }
 .btt-btn.show { opacity:1; visibility:visible; }
-.btt-btn:hover { background:#A86E10; transform:translateY(-3px); }
+.btt-btn:hover { background:#A86E10; transform:translateY(-3px); box-shadow:0 6px 20px rgba(200,133,26,.5); }
+
 .wa-float {
-  position:fixed; bottom:82px; right:28px;
-  width:44px; height:44px; border-radius:8px;
+  position:fixed; bottom:84px; right:20px;
+  width:44px; height:44px; border-radius:50%;
   background:#25D366; color:#fff;
   display:flex; align-items:center; justify-content:center;
-  font-size:1.3rem; box-shadow:0 4px 16px rgba(37,211,102,.35);
+  font-size:1.3rem; box-shadow:0 4px 16px rgba(37,211,102,.4);
   z-index:900; transition:all 0.3s; text-decoration:none;
 }
-.wa-float:hover { transform:translateY(-3px) scale(1.05); color:#fff; }
+.wa-float:hover { transform:translateY(-3px) scale(1.05); color:#fff; box-shadow:0 6px 22px rgba(37,211,102,.5); }
 
 /* === MOBILE CALL BAR === */
 .mobile-call-bar {
@@ -817,7 +819,14 @@ button { cursor:pointer; font-family:var(--font-body); border:none; background:n
   box-shadow:0 -4px 20px rgba(0,0,0,.18); display:none;
 }
 .mobile-call-bar a { color:#fff; display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; }
-@media (max-width:768px) { .mobile-call-bar { display:block; } }
+@media (max-width:768px) {
+  .mobile-call-bar { display:block; }
+
+  /* Call bar is ~50px tall.
+     Stack: call-bar(0–50) → gap(12) → wa-float(62–106) → gap(12) → btt-btn(118–162) */
+  .wa-float  { bottom: 62px;  right: 16px; width: 44px; height: 44px; border-radius: 50%; }
+  .btt-btn   { bottom: 118px; right: 16px; width: 44px; height: 44px; border-radius: 50%; }
+}
 
 /* === REVEAL ANIMATIONS === */
 .reveal { opacity:0; transition:opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1); }
@@ -1045,13 +1054,6 @@ button { cursor:pointer; font-family:var(--font-body); border:none; background:n
 @media (max-width: 480px) {
   .btn { padding: 11px 22px; font-size: .85rem; }
   .btn-sm { padding: 8px 16px; font-size: .8rem; }
-}
-
-/* --- Floating elements mobile --- */
-@media (max-width: 768px) {
-  .wa-float  { bottom: 78px; right: 14px; width: 46px; height: 46px; }
-  .btt-btn   { bottom: 72px; right: 14px; width: 40px; height: 40px; }
-  .mobile-call-bar { display: block; padding: 13px; font-size: .85rem; }
 }
 
 /* --- Section title sizes on mobile --- */

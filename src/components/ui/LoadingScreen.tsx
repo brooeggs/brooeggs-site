@@ -22,7 +22,7 @@ export default function LoadingScreen() {
     <div id="loader" className={hidden ? "hidden" : ""} role="status" aria-label="Loading Broog's">
       <div className="loader-inner">
         <div className="loader-egg-anim" />
-        <div className="loader-brand">Broog&apos;s</div>
+        <div className="loader-brand">Brooeggs</div>
       </div>
     </div>
   );
