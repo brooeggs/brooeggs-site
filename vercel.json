@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "order.brooeggs.com" }],
+      "destination": "https://www.brooeggs.com/$1",
+      "permanent": true
+    }
+  ]
+}

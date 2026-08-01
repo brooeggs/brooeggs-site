@@ -7,6 +7,7 @@ import BackToTop from "@/components/ui/BackToTop";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import MobileCallBar from "@/components/ui/MobileCallBar";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import { ToastProvider } from "@/components/ui/Toast";
 
 const playfair = Playfair_Display({
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <BackToTop />
           <WhatsAppFloat />
           <MobileCallBar />
+          <ScrollReveal />
         </ToastProvider>
       </body>
     </html>
