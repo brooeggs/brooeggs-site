@@ -1,123 +1,73 @@
 import Link from "next/link";
-import { Egg, Leaf, ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section
-      className="min-h-screen flex items-center relative overflow-hidden pt-[80px]"
-      style={{
-        background: "linear-gradient(145deg, #1C0D07 0%, #2C1810 30%, #4A2E14 60%, #7A5230 85%, #B8860B 100%)",
-      }}
-    >
-      {/* Radial glow accents */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full opacity-20"
-          style={{ background: "radial-gradient(circle, rgba(212,160,23,0.4) 0%, transparent 70%)", transform: "translate(-30%, -30%)" }} />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full opacity-15"
-          style={{ background: "radial-gradient(circle, rgba(212,160,23,0.35) 0%, transparent 70%)", transform: "translate(20%, 20%)" }} />
-      </div>
+    <section className="hero" id="hero">
+      <div className="hero-inner">
 
-      {/* Floating decorative eggs */}
-      <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-        <span className="absolute top-[14%] left-[7%] text-[2.8rem] opacity-10" style={{ animation: "floatEgg 7s ease-in-out infinite" }}>🥚</span>
-        <span className="absolute top-[68%] left-[4%] text-[1.8rem] opacity-10" style={{ animation: "floatEgg 7s 1.8s ease-in-out infinite" }}>🥚</span>
-        <span className="absolute top-[18%] right-[9%] text-[3.5rem] opacity-8" style={{ animation: "floatEgg 7s 0.9s ease-in-out infinite" }}>🥚</span>
-        <span className="absolute bottom-[22%] right-[6%] text-[2.2rem] opacity-10" style={{ animation: "floatEgg 7s 2.8s ease-in-out infinite" }}>🥚</span>
-        <span className="absolute top-[48%] right-[18%] text-[4.5rem] opacity-8" style={{ animation: "chickFloat 8s 1.2s ease-in-out infinite" }}>🐓</span>
-      </div>
-
-      {/* Dot pattern overlay */}
-      <div className="absolute inset-0 pointer-events-none opacity-30"
-        style={{ backgroundImage: "radial-gradient(rgba(212,160,23,0.12) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-
-      <div className="relative z-[2] px-6 py-16 sm:py-20 max-w-[1180px] mx-auto w-full">
-        <div className="max-w-[680px]">
-
-          {/* Badge pill */}
-          <div className="hero-badge-pill" style={{ animation: "fadeUp .55s .1s ease both" }}>
-            <Leaf size={14} strokeWidth={2.5} />
-            100% Natural &amp; Farm Fresh
+        {/* LEFT: Text */}
+        <div className="hero-text">
+          <div className="hero-eyebrow" style={{ animation: "fadeUp .6s .1s ease both", opacity: 0 }}>
+            <span />Quality Poultry &amp; Farm Fresh<span />
           </div>
-
-          {/* Headline */}
-          <h1
-            className="font-heading font-[800] leading-[1.08] text-white mb-5 tracking-[-1.5px]"
-            style={{ fontSize: "clamp(2.6rem, 6.5vw, 4.8rem)", animation: "fadeUp .6s .22s ease both" }}
-          >
-            Premium{" "}
-            <span className="relative inline-block">
-              <span className="text-[#F0C040]">Country</span>
-              <span className="absolute bottom-[-3px] left-0 w-full h-[3px] rounded-full"
-                style={{ background: "linear-gradient(90deg, #F0C040, rgba(240,192,64,0))" }} />
-            </span>
-            <br />Chicken Eggs
+          <h1 className="hero-title" style={{ animation: "fadeUp .6s .25s ease both", opacity: 0 }}>
+            Fresh Eggs<br />For You
+            <span className="big-word"><em>Everyday!</em></span>
           </h1>
-
-          {/* Subtitle */}
-          <p
-            className="text-[1.1rem] text-white/80 leading-[1.75] max-w-[520px] mb-9"
-            style={{ animation: "fadeUp .6s .38s ease both" }}
-          >
-            Straight from free-range farms to your table. Experience the authentic taste of nature&apos;s finest eggs — rich in nutrients, bursting with flavour.
+          <p className="hero-sub" style={{ animation: "fadeUp .6s .4s ease both", opacity: 0 }}>
+            Taste our delicious and nutritious country chicken eggs — naturally raised
+            on free-range farms, collected fresh daily, and delivered straight to your table.
           </p>
-
-          {/* CTA Buttons */}
-          <div className="flex gap-3.5 flex-wrap mb-12" style={{ animation: "fadeUp .6s .52s ease both" }}>
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-[0.925rem] bg-[#D4A017] text-white shadow-[0_6px_24px_rgba(212,160,23,0.5)] hover:bg-[#B8860B] hover:shadow-[0_8px_32px_rgba(212,160,23,0.6)] hover:-translate-y-0.5 transition-all duration-300"
-            >
-              <Egg size={16} strokeWidth={2.5} /> Explore Products
+          <div className="hero-actions" style={{ animation: "fadeUp .6s .55s ease both", opacity: 0 }}>
+            <Link href="/products" className="btn btn-gold">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="10" ry="7"/><path d="M12 5v14"/></svg>
+              View All Products
             </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-[0.925rem] bg-white/10 text-white border border-white/30 backdrop-blur-sm hover:bg-white/20 hover:border-white/50 hover:-translate-y-0.5 transition-all duration-300"
-            >
-              Get In Touch <ArrowRight size={15} strokeWidth={2.5} />
-            </Link>
+            <Link href="/about" className="btn btn-outline-gold">Learn More</Link>
           </div>
-
-          {/* Stats row */}
-          <div
-            className="flex flex-wrap gap-0 w-fit"
-            style={{ animation: "fadeUp .6s .66s ease both" }}
-          >
-            {[
-              { value: "5000", suffix: "+", label: "Happy Customers" },
-              { value: "100", suffix: "%", label: "Natural & Fresh" },
-              { value: "365", suffix: "", label: "Days Delivery" },
-            ].map((stat, i) => (
-              <div
-                key={i}
-                className={`flex flex-col items-center px-6 py-3 ${i < 2 ? "border-r border-white/15" : ""}`}
-                style={{
-                  background: i === 0 ? "rgba(255,255,255,0.07)" : "rgba(255,255,255,0.05)",
-                  backdropFilter: "blur(12px)",
-                  borderRadius: i === 0 ? "16px 0 0 16px" : i === 2 ? "0 16px 16px 0" : "0",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  borderRight: i < 2 ? "none" : "1px solid rgba(255,255,255,0.1)",
-                }}
-              >
-                <div className="flex items-end gap-0.5">
-                  <span className="font-heading text-[1.9rem] font-[800] text-[#F0C040] leading-none">{stat.value}</span>
-                  {stat.suffix && <span className="text-[1.4rem] font-bold text-[#F0C040] leading-none mb-0.5">{stat.suffix}</span>}
-                </div>
-                <span className="block text-[0.7rem] text-white/65 mt-1 tracking-[0.8px] uppercase font-semibold whitespace-nowrap">{stat.label}</span>
-              </div>
-            ))}
+          <div className="hero-trust" style={{ animation: "fadeUp .6s .7s ease both", opacity: 0 }}>
+            <div className="trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              100% Natural
+            </div>
+            <div className="trust-divider" />
+            <div className="trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="16" height="13" x="1" y="3" rx="2"/><path d="M21 10c1 0 2 1 2 2v3c0 1-1 2-2 2h-1v-7z"/></svg>
+              Daily Delivery
+            </div>
+            <div className="trust-divider" />
+            <div className="trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Quality Assured
+            </div>
           </div>
         </div>
+
+        {/* RIGHT: Visual */}
+        <div className="hero-visual" style={{ animation: "fadeUp .7s .3s ease both", opacity: 0 }}>
+          <div className="hero-photo-placeholder">
+            <span className="ph-egg2">🥚</span>
+            <span className="ph-chick">🐣</span>
+            <span className="ph-egg">🍳</span>
+          </div>
+          <div className="hero-badge-float">
+            <span className="hbf-icon">🥚</span>
+            <div className="hbf-text">
+              <strong>Farm Fresh</strong>
+              <span>Collected daily</span>
+            </div>
+          </div>
+          <div className="hero-badge-float2">
+            ★ 5000+ Happy Customers
+          </div>
+        </div>
+
       </div>
 
       {/* Scroll indicator */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 text-[0.7rem] tracking-[1.5px] uppercase"
-        style={{ animation: "fadeUp 1s 1.1s ease both" }}
-        aria-hidden="true"
-      >
-        <span>Scroll Down</span>
-        <span className="w-4 h-4 border-r-2 border-b-2 border-white/40 rotate-45 block"
-          style={{ animation: "chevronBounce 1.6s ease infinite" }} />
+      <div className="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div className="scroll-chevron" />
       </div>
     </section>
   );

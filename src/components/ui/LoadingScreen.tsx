@@ -19,13 +19,10 @@ export default function LoadingScreen() {
   if (!mounted) return null;
 
   return (
-    <div id="loader" className={hidden ? "hidden" : ""}>
-      <div className="loader-content">
-        <div className="loader-egg">
-          <div className="egg-shell" />
-          <div className="egg-yolk" />
-        </div>
-        <p className="loader-text">Broog&apos;s</p>
+    <div id="loader" className={hidden ? "hidden" : ""} role="status" aria-label="Loading Broog's">
+      <div className="loader-inner">
+        <div className="loader-egg-anim" />
+        <div className="loader-brand">Broog&apos;s</div>
       </div>
     </div>
   );

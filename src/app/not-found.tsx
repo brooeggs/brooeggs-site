@@ -9,7 +9,7 @@ export default function NotFound() {
   return (
     <div
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{ background: "#f5edd8" }}
+      style={{ background: "#F0EAD6" }}
     >
       {/* Dot pattern */}
       <div
