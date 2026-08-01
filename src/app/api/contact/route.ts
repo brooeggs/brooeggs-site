@@ -9,7 +9,7 @@ function getResend() {
 }
 
 const TO_EMAIL   = "support@brooeggs.com";
-const FROM_EMAIL = "Broog's Website <onboarding@resend.dev>";
+const FROM_EMAIL = "Brooeggs Website <onboarding@resend.dev>";
 
 export async function POST(req: NextRequest) {
   try {
@@ -39,13 +39,13 @@ export async function POST(req: NextRequest) {
       from:    FROM_EMAIL,
       to:      TO_EMAIL,
       replyTo: email,
-      subject: `[Broog's] ${subjectLabel} — ${name}`,
+      subject: `[Brooeggs] ${subjectLabel} — ${name}`,
       html: `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>New Contact Form Submission — Broog's</title>
+  <title>New Contact Form Submission — Brooeggs</title>
 </head>
 <body style="margin:0;padding:0;background:#F0EAD6;font-family:'Helvetica Neue',Arial,sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="background:#F0EAD6;padding:32px 16px;">
@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
                 <tr>
                   <td>
                     <p style="margin:0 0 4px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(240,192,64,0.7);">EGGCELLENCE SINCE 2025</p>
-                    <h1 style="margin:0;font-family:Georgia,serif;font-size:28px;font-weight:800;color:#F0C040;letter-spacing:0.5px;">🥚 Broog's</h1>
+                    <h1 style="margin:0;font-family:Georgia,serif;font-size:28px;font-weight:800;color:#F0C040;letter-spacing:0.5px;">🥚 Brooeggs</h1>
                     <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.65);">New enquiry from your website contact form</p>
                   </td>
                   <td align="right" valign="middle">
@@ -151,7 +151,7 @@ export async function POST(req: NextRequest) {
               <table cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="padding-right:10px;">
-                    <a href="mailto:${email}?subject=Re: ${subjectLabel} — Broog's" style="display:inline-block;background:#C8851A;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:99px;font-size:13px;font-weight:700;">
+                    <a href="mailto:${email}?subject=Re: ${subjectLabel} — Brooeggs" style="display:inline-block;background:#C8851A;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:99px;font-size:13px;font-weight:700;">
                       ↩ Reply to ${name}
                     </a>
                   </td>
@@ -177,7 +177,7 @@ export async function POST(req: NextRequest) {
                   </td>
                   <td align="right">
                     <p style="margin:0;font-size:12px;color:rgba(240,192,64,0.6);font-weight:700;">
-                      Broog's 🥚
+                      Brooeggs 🥚
                     </p>
                   </td>
                 </tr>
