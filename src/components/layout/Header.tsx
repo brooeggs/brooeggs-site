@@ -11,27 +11,24 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close menu on route change
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
-  // Close menu on outside click
   useEffect(() => {
     if (!menuOpen) return;
     const handler = (e: MouseEvent) => {
-      const header = document.getElementById("site-header");
-      if (header && !header.contains(e.target as Node)) setMenuOpen(false);
+      const hdr = document.getElementById("site-header");
+      if (hdr && !hdr.contains(e.target as Node)) setMenuOpen(false);
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, [menuOpen]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -40,28 +37,22 @@ export default function Header() {
   return (
     <header
       id="site-header"
-      className={`fixed top-0 w-full z-[1000] transition-all duration-300 ${
-        scrolled ? "scrolled bg-[rgba(240,234,214,0.97)] backdrop-blur-[10px] border-b border-[#EDE4D4] shadow-[0_2px_12px_rgba(44,36,22,0.08)]" : "bg-transparent"
-      }`}
+      className={`site-header${scrolled ? " scrolled" : ""}`}
     >
       <nav className="navbar" aria-label="Main navigation">
 
-        {/* Brand: logo + text */}
+        {/* Brand */}
         <Link href="/" className="nav-brand" aria-label={`${SITE.name} — Home`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/logo/logo.jpg"
-            alt={`${SITE.name} logo`}
-            className="nav-logo"
-          />
+          <img src="/images/logo/logo.jpg" alt={`${SITE.name} logo`} className="nav-logo" />
           <div className="brand-text">
             <span className="brand-name">{SITE.name}</span>
             <span className="brand-tagline">Eggcellence Since {SITE.founded}</span>
           </div>
         </Link>
 
-        {/* Desktop nav links — hidden on mobile */}
-        <ul className="nav-menu" id="navMenu" role="list">
+        {/* Desktop nav — hidden on mobile via CSS */}
+        <ul className="desktop-nav" role="list">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <Link
@@ -75,36 +66,35 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* Right side: search + CTA + hamburger */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        {/* Right: search + CTA + hamburger */}
+        <div className="nav-right">
           <a href="#" className="nav-search" aria-label="Search">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
             </svg>
           </a>
           <Link href="/contact" className="nav-cta">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
             Order Now
           </Link>
           <button
             className={`hamburger${menuOpen ? " open" : ""}`}
-            id="hamburger"
-            onClick={() => setMenuOpen((v) => !v)}
+            onClick={() => setMenuOpen(v => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            aria-controls="mobile-nav"
+            aria-controls="mobile-drawer"
           >
-            <span /><span /><span />
+            <span/><span/><span/>
           </button>
         </div>
       </nav>
 
-      {/* Mobile drawer — INSIDE the header element, shown via open class */}
+      {/* Mobile drawer — separate id, never conflicting with desktop */}
       <div
-        id="mobile-nav"
-        className={`nav-menu${menuOpen ? " open" : ""}`}
+        id="mobile-drawer"
+        className={`mobile-drawer${menuOpen ? " open" : ""}`}
         role="navigation"
         aria-label="Mobile navigation"
       >
@@ -119,14 +109,14 @@ export default function Header() {
             {link.label}
           </Link>
         ))}
-        <div style={{ padding: "8px 16px 4px" }}>
+        <div className="mobile-drawer-cta">
           <Link
             href="/contact"
             className="btn btn-gold btn-sm"
-            style={{ width: "100%", justifyContent: "center" }}
+            style={{ width: "100%", justifyContent: "center", display: "flex" }}
             onClick={() => setMenuOpen(false)}
           >
-            Order Now
+            📞 Order Now
           </Link>
         </div>
       </div>
