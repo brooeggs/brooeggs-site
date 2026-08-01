@@ -45,10 +45,7 @@ export default function Header() {
         <Link href="/" className="nav-brand" aria-label={`${SITE.name} — Home`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/logo/logo.jpg" alt={`${SITE.name} logo`} className="nav-logo" />
-          <div className="brand-text">
-            <span className="brand-name">{SITE.name}</span>
-            <span className="brand-tagline">Eggcellence Since {SITE.founded}</span>
-          </div>
+          {/* brand-text: only visible on mobile drawer context via CSS */}
         </Link>
 
         {/* Desktop nav — hidden on mobile via CSS */}

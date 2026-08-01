@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy init — only instantiated at request time, not at build time
+function getResend() {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) throw new Error("RESEND_API_KEY is not set");
+  return new Resend(key);
+}
 
 const TO_EMAIL   = "support@brooeggs.com";
 const FROM_EMAIL = "Broog's Website <onboarding@resend.dev>";
@@ -30,7 +35,7 @@ export async function POST(req: NextRequest) {
       timeStyle: "short",
     });
 
-    const { error } = await resend.emails.send({
+    const { error } = await getResend().emails.send({
       from:    FROM_EMAIL,
       to:      TO_EMAIL,
       replyTo: email,
