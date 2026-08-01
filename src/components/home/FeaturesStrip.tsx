@@ -12,25 +12,23 @@ const ICON_MAP = {
 type IconKey = keyof typeof ICON_MAP;
 
 export default function FeaturesStrip() {
+  const items = [...FEATURES_STRIP, ...FEATURES_STRIP];
+
   return (
     <div className="features-strip-bg">
-      {/* On mobile: 2-col grid. On md: single row. */}
-      <div className="max-w-[1180px] mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-5">
-          {FEATURES_STRIP.map((f, i) => {
+      <div className="max-w-[1200px] mx-auto overflow-hidden">
+        <div className="strip-grid-inner">
+          {items.map((f, i) => {
             const Icon = ICON_MAP[f.icon as IconKey];
             return (
-              <div
-                key={i}
-                className="flex items-center gap-3 px-5 py-4 text-white border-b md:border-b-0 border-r border-white/15 last:border-r-0 [&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:border-r hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="w-10 h-10 shrink-0 bg-white/15 rounded-full flex items-center justify-center">
-                  <Icon size={17} />
-                </div>
-                <div className="min-w-0">
-                  <strong className="block text-[0.82rem] font-bold leading-tight truncate">{f.title}</strong>
-                  <span className="block text-[0.7rem] opacity-75 mt-0.5 leading-tight truncate">{f.desc}</span>
-                </div>
+              <div key={i} className="strip-item">
+                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                  <Icon size={13} strokeWidth={2.5} aria-hidden="true" />
+                </span>
+                <span>{f.title}</span>
+                {i % FEATURES_STRIP.length === FEATURES_STRIP.length - 1 && (
+                  <span className="strip-separator mx-2">✦</span>
+                )}
               </div>
             );
           })}

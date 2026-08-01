@@ -1,44 +1,82 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
-const services = [
-  { emoji: "🐔", title: "The Best Hens", desc: "Indigenous free-range breeds raised on natural grain and pasture. Happy hens lay better eggs — it's that simple." },
-  { emoji: "🌾", title: "Our Farms", desc: "Partner farms across Tamil Nadu follow ethical, sustainable practices with open-air housing and clean water access." },
-  { emoji: "🥚", title: "Organic Eggs", desc: "Zero artificial additives. Our eggs are 100% chemical-free, collected within hours and packed the same day." },
-  { emoji: "🚚", title: "Fast Delivery", desc: "We dispatch orders same-morning so your eggs arrive fresh — whether you're a home buyer or a bulk business." },
+const features = [
+  { title: "Free-Range Hens", desc: "Our hens live in open spaces with natural feed and clean water — stress-free and healthy." },
+  { title: "No Artificial Additives", desc: "Zero hormones, zero antibiotics — pure, chemical-free eggs the way nature intended." },
+  { title: "Daily Fresh Supply", desc: "Collected every morning and dispatched same day, so you always get the freshest eggs." },
 ];
 
 export default function IntroSection() {
   return (
-    <section className="py-22 bg-white">
-      <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-[72px] items-start">
-          <div>
-            <div className="text-[0.72rem] font-[800] tracking-[2.5px] uppercase text-gold-dark mb-3 flex items-center gap-2">
-              <span className="block w-6 h-[1.5px] bg-gold" />Quality Poultry
-            </div>
-            <h2 className="font-heading font-[800] text-[clamp(1.8rem,3.8vw,2.7rem)] leading-[1.18] text-dark mb-3.5 tracking-[-0.3px]">
-              <strong className="text-gold-dark italic">Friendly Service</strong><br />You Can Trust
-            </h2>
-            <div className="w-11 h-[3px] bg-gold rounded-sm my-5" />
-            <p className="text-[1rem] text-text-mid leading-[1.75] max-w-[420px] mb-5">
-              At Broog&apos;s, we believe great food starts with great farming. Our country chicken eggs come from hens that roam freely, eat naturally, and live well — and you can taste that difference in every single egg.
-            </p>
-            <p className="text-[1rem] text-text-mid leading-[1.75] max-w-[420px] mb-8">
-              We supply households, restaurants, hotels, and retailers across the region with unwavering freshness and quality, day after day.
-            </p>
-            <Link href="/about" className="inline-flex items-center gap-2 px-7 py-3 rounded-[40px] font-bold text-[0.9rem] bg-gold text-white border-2 border-gold shadow-[0_4px_18px_rgba(200,133,26,.32)] hover:bg-gold-dark hover:-translate-y-0.5 transition-all duration-300 mt-8">
-              <ArrowRight size={16} /> View All Services
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {services.map((s, i) => (
-              <div key={i} className="bg-cream border border-border-light rounded-[14px] p-6 hover:border-gold hover:shadow-[0_6px_28px_rgba(44,36,22,.10)] hover:-translate-y-[3px] transition-all duration-300">
-                <span className="text-[2.2rem] mb-3.5 block">{s.emoji}</span>
-                <h3 className="font-heading text-[0.95rem] font-bold text-dark mb-2 uppercase tracking-[0.5px]">{s.title}</h3>
-                <p className="text-[0.82rem] text-text-mid leading-[1.65]">{s.desc}</p>
+    <section className="py-[90px] bg-[#f5edd8] relative overflow-hidden">
+      {/* Subtle background texture */}
+      <div className="absolute inset-0 pointer-events-none opacity-40"
+        style={{ backgroundImage: "radial-gradient(rgba(212,160,23,0.08) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+
+      <div className="max-w-[1200px] mx-auto px-6 relative z-[1]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Visual side — egg mosaic */}
+          <div className="flex justify-center reveal-left">
+            <div className="relative" style={{ width: 380, height: 380 }}>
+              <div className="egg-mosaic" style={{ width: 380, height: 380 }}>
+                <div className="mosaic-egg me1">🥚</div>
+                <div className="mosaic-egg me2">🥚</div>
+                <div className="mosaic-egg me3">🥚</div>
+                <div className="mosaic-egg me4">🥚</div>
+                <div className="mosaic-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/logo/logo.jpg"
+                    alt="Broog's logo"
+                    className="mosaic-logo"
+                  />
+                </div>
               </div>
-            ))}
+
+              {/* Floating badge */}
+              <div className="absolute -bottom-2 -right-2 bg-[#D4A017] text-white px-4 py-2 rounded-2xl shadow-[0_8px_24px_rgba(212,160,23,0.4)] text-center z-10">
+                <span className="font-heading font-[800] text-[1.1rem] block leading-none">100%</span>
+                <span className="text-[0.68rem] font-semibold tracking-wide uppercase opacity-90">Natural</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Text side */}
+          <div className="reveal-right">
+            <div className="section-tag">Who We Are</div>
+            <h2 className="section-title">
+              Bringing Nature&apos;s Best<br />
+              <span className="text-[#B8860B] italic">Eggs to Your Table</span>
+            </h2>
+            <p className="text-[1.02rem] text-[#4A4A4A] leading-[1.78] mb-3 max-w-[520px]">
+              At Broog&apos;s, we believe the best food starts at the source. Our country chicken eggs come from free-range farms where hens roam freely, feed naturally, and lay eggs the way nature intended.
+            </p>
+            <p className="text-[1.02rem] text-[#4A4A4A] leading-[1.78] mb-8 max-w-[520px]">
+              Since our founding, we&apos;ve built a reputation for quality, freshness, and reliability — serving households, restaurants, and retail partners across the region.
+            </p>
+
+            <div className="flex flex-col gap-4 mb-9">
+              {features.map((f, i) => (
+                <div key={i} className="flex gap-4 items-start group">
+                  <div className="shrink-0 w-9 h-9 bg-[rgba(212,160,23,0.12)] rounded-full flex items-center justify-center text-[#D4A017] mt-0.5 transition-all duration-300 group-hover:bg-[#D4A017] group-hover:text-white">
+                    <CheckCircle size={16} strokeWidth={2.5} />
+                  </div>
+                  <div>
+                    <strong className="block text-[0.95rem] text-[#6B4C2A] font-bold mb-0.5">{f.title}</strong>
+                    <p className="text-[0.875rem] text-[#7A7A7A] leading-[1.6] m-0">{f.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-[0.925rem] bg-[#D4A017] text-white shadow-[0_4px_20px_rgba(212,160,23,0.35)] hover:bg-[#B8860B] hover:shadow-[0_8px_28px_rgba(212,160,23,0.45)] hover:-translate-y-0.5 transition-all duration-300"
+            >
+              Learn More About Us <ArrowRight size={15} strokeWidth={2.5} />
+            </Link>
           </div>
         </div>
       </div>

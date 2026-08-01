@@ -8,62 +8,74 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-16 sm:py-20 lg:py-22 bg-beige">
-      <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
+    <section className="py-[90px] bg-[#EDE3C8] relative overflow-hidden">
+      {/* Subtle texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-50"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(212,160,23,0.09) 1px, transparent 1px)",
+          backgroundSize: "26px 26px",
+        }}
+      />
 
-        <div className="text-center mb-9 sm:mb-11">
-          <div className="inline-flex items-center gap-[7px] text-[0.72rem] font-[800] tracking-[2px] uppercase text-gold-dark mb-2.5">
-            <span className="block w-7 h-[1.5px] bg-gold" />FAQs<span className="block w-7 h-[1.5px] bg-gold" />
-          </div>
-          <h2 className="font-heading font-[800] leading-[1.18] text-dark mb-3.5 tracking-[-0.3px]"
-            style={{ fontSize: "clamp(1.8rem, 3.8vw, 2.7rem)" }}>
-            Frequently Asked <strong className="text-gold-dark italic">Questions</strong>
-          </h2>
+      <div className="max-w-[1200px] mx-auto px-6 relative z-[1]">
+        <div className="text-center mb-14">
+          <div className="section-tag">FAQs</div>
+          <h2 className="section-title">Frequently Asked Questions</h2>
+          <p className="text-[1.02rem] text-[#4A4A4A] leading-[1.75] max-w-[520px] mx-auto">
+            Find answers to the most common questions about our eggs and services.
+          </p>
         </div>
 
-        <div className="max-w-[760px] mx-auto flex flex-col gap-2.5">
+        <div className="max-w-[820px] mx-auto flex flex-col gap-3">
           {FAQ_HOME.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
               <div
                 key={i}
-                className="bg-white border-[1.5px] border-border-light rounded-[14px] overflow-hidden transition-colors duration-300 hover:border-[rgba(200,133,26,.3)] shadow-sm"
+                className={`rounded-[18px] border overflow-hidden shadow-sm transition-all duration-300 ${
+                  isOpen
+                    ? "border-[rgba(212,160,23,0.4)] shadow-[0_4px_20px_rgba(212,160,23,0.12)] bg-white"
+                    : "border-[#E8D5B0] bg-white/80 hover:border-[rgba(212,160,23,0.3)] hover:shadow-[0_2px_12px_rgba(212,160,23,0.1)]"
+                }`}
               >
                 <button
-                  className="flex items-center justify-between w-full px-5 sm:px-6 py-[18px] bg-transparent text-left gap-4 cursor-pointer"
+                  className="flex items-center justify-between w-full px-6 py-5 bg-transparent text-left gap-4 cursor-pointer"
                   onClick={() => setOpenIndex(isOpen ? null : i)}
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${i}`}
                   id={`faq-btn-${i}`}
                 >
-                  <span className="font-bold text-[0.875rem] sm:text-[0.9rem] text-dark leading-snug">
+                  <span
+                    className={`font-semibold text-[0.95rem] transition-colors duration-200 ${
+                      isOpen ? "text-[#B8860B]" : "text-[#6B4C2A]"
+                    }`}
+                  >
                     {faq.q}
                   </span>
                   <span
                     className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${
                       isOpen
-                        ? "bg-gold text-white rotate-45"
-                        : "bg-[rgba(200,133,26,.08)] text-gold-dark"
+                        ? "bg-[#D4A017] text-white rotate-45 shadow-[0_2px_8px_rgba(212,160,23,0.4)]"
+                        : "bg-[rgba(212,160,23,0.1)] text-[#B8860B]"
                     }`}
                     aria-hidden="true"
                   >
-                    <Plus size={14} />
+                    <Plus size={14} strokeWidth={2.5} />
                   </span>
                 </button>
 
-                {/* CSS grid height-to-auto animation */}
                 <div
                   id={`faq-answer-${i}`}
                   role="region"
                   aria-labelledby={`faq-btn-${i}`}
-                  className="grid transition-all duration-[380ms] ease-in-out"
-                  style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+                  className="overflow-hidden transition-all duration-[380ms] ease-in-out"
+                  style={{ maxHeight: isOpen ? "220px" : "0" }}
                 >
-                  <div className="overflow-hidden">
-                    <p className="px-5 sm:px-6 pb-5 text-[0.875rem] text-text-mid leading-[1.75]">
-                      {faq.a}
-                    </p>
-                  </div>
+                  <p className="px-6 pb-6 text-[0.9rem] text-[#4A4A4A] leading-[1.75]">
+                    {faq.a}
+                  </p>
                 </div>
               </div>
             );

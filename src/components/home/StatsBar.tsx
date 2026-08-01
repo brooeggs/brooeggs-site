@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { Users, Egg, Store, Star } from "lucide-react";
 import { STATS } from "@/lib/constants";
 
@@ -10,28 +13,88 @@ const ICON_MAP = {
 
 type IconKey = keyof typeof ICON_MAP;
 
+function animateCounter(el: HTMLElement, target: number) {
+  const duration = 2000;
+  const steps = 60;
+  const increment = target / steps;
+  let current = 0;
+  let step = 0;
+
+  const timer = setInterval(() => {
+    step++;
+    current = Math.min(Math.round(increment * step), target);
+    el.textContent =
+      current >= 100000
+        ? "100K"
+        : current >= 1000
+        ? current.toLocaleString("en-IN")
+        : String(current);
+    if (step >= steps) clearInterval(timer);
+  }, duration / steps);
+}
+
 export default function StatsBar() {
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          const counters = sectionRef.current?.querySelectorAll("[data-target]");
+          counters?.forEach((el) => {
+            const target = parseInt(el.getAttribute("data-target") || "0", 10);
+            animateCounter(el as HTMLElement, target);
+          });
+        }
+      },
+      { threshold: 0.4 }
+    );
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
   return (
-    <section className="stats-bar py-[52px]">
-      <div className="max-w-[1180px] mx-auto px-5 sm:px-7">
-        <div className="grid grid-cols-2 md:grid-cols-4">
+    <section className="stats-bar py-[60px]" ref={sectionRef}>
+      <div className="max-w-[1200px] mx-auto px-6">
+
+        {/* Section label */}
+        <p className="text-center text-[0.72rem] font-bold uppercase tracking-[2.5px] text-[rgba(240,192,64,0.6)] mb-10">
+          Trusted by thousands across Tamil Nadu
+        </p>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {STATS.map((s, i) => {
             const Icon = ICON_MAP[s.icon as IconKey];
             return (
-              <div
-                key={i}
-                className="text-center py-8 sm:py-10 px-4 border-r border-white/10 last:border-r-0 [&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:border-r hover:bg-[rgba(200,133,26,.08)] transition-all duration-300"
-              >
-                <Icon size={24} className="text-gold-bright mb-3 mx-auto" />
-                <div className="flex items-end justify-center gap-0.5">
-                  <span className="font-heading text-[2.2rem] sm:text-[2.6rem] font-[800] text-white leading-none">
-                    {s.value >= 1000 ? (s.value >= 100000 ? "1L" : s.value.toLocaleString("en-IN")) : s.value}
-                  </span>
-                  <span className="text-[1.3rem] sm:text-[1.6rem] font-bold text-gold-bright leading-none mb-0.5">{s.suffix}</span>
+              <div key={i} className="stat-card-dark group cursor-default">
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-full bg-[rgba(212,160,23,0.12)] flex items-center justify-center mx-auto mb-4 transition-all duration-400 group-hover:bg-[rgba(212,160,23,0.22)]">
+                  <Icon size={22} className="text-[#D4A017]" strokeWidth={1.8} />
                 </div>
-                <span className="block text-[0.7rem] sm:text-[0.75rem] text-white/55 mt-2 tracking-[0.5px] uppercase">
+
+                {/* Counter */}
+                <div className="flex items-end justify-center gap-0.5 mb-2">
+                  <span
+                    className="font-heading text-[2.6rem] font-[800] text-white leading-none"
+                    data-target={s.value}
+                  >
+                    0
+                  </span>
+                  <span className="text-[1.6rem] font-bold text-[#F0C040] leading-none mb-0.5">
+                    {s.suffix}
+                  </span>
+                </div>
+
+                {/* Label */}
+                <span className="block text-[0.78rem] font-semibold text-white/55 tracking-[0.8px] uppercase">
                   {s.label}
                 </span>
+
+                {/* Bottom accent bar */}
+                <div className="w-8 h-[2px] rounded-full bg-[#D4A017] mx-auto mt-4 opacity-40 transition-all duration-300 group-hover:w-14 group-hover:opacity-70" />
               </div>
             );
           })}

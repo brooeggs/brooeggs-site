@@ -1,62 +1,76 @@
 import { TESTIMONIALS } from "@/lib/constants";
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-16 sm:py-20 lg:py-22 bg-[#FAF6EE]">
-      <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
+    <section className="py-[90px] bg-[#f5edd8] relative overflow-hidden">
+      {/* Subtle bg pattern */}
+      <div className="absolute inset-0 pointer-events-none opacity-30"
+        style={{ backgroundImage: "radial-gradient(rgba(212,160,23,0.07) 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
 
-        <div className="text-center mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-[7px] text-[0.72rem] font-[800] tracking-[2px] uppercase text-gold-dark mb-2.5">
-            <span className="block w-7 h-[1.5px] bg-gold" />Customer Reviews<span className="block w-7 h-[1.5px] bg-gold" />
-          </div>
-          <h2 className="font-heading font-[800] leading-[1.18] text-dark mb-3.5 tracking-[-0.3px]"
-            style={{ fontSize: "clamp(1.8rem, 3.8vw, 2.7rem)" }}>
-            What People <strong className="text-gold-dark italic">Say About Us</strong>
-          </h2>
-          <p className="text-[1rem] text-text-mid leading-[1.75] max-w-[540px] mx-auto">
-            Trusted by thousands of homes, restaurants, and stores across the region.
+      <div className="max-w-[1200px] mx-auto px-6 relative z-[1]">
+        <div className="text-center mb-14">
+          <div className="section-tag">Customer Reviews</div>
+          <h2 className="section-title">What Our Customers Say</h2>
+          <p className="text-[1.02rem] text-[#4A4A4A] leading-[1.75] max-w-[520px] mx-auto">
+            Trusted by thousands of happy customers across the region.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {TESTIMONIALS.map((t, i) => (
             <div
               key={i}
-              className="bg-white border-[1.5px] border-border-light rounded-[16px] p-6 sm:p-7 transition-all duration-300 hover:border-[rgba(200,133,26,.3)] hover:shadow-[0_6px_28px_rgba(44,36,22,.10)] hover:-translate-y-[3px] flex flex-col"
+              className="group bg-white rounded-[24px] border border-[#E8D5B0] p-8 transition-all duration-350 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(139,107,74,0.14)] hover:border-[rgba(212,160,23,0.25)] relative will-change-transform flex flex-col"
             >
-              {/* Opening quote decoration */}
-              <div
-                className="text-[3.5rem] text-[rgba(200,133,26,.12)] leading-none mb-2 select-none"
-                style={{ fontFamily: "Georgia, serif" }}
-              >
-                &ldquo;
+              {/* Top accent */}
+              <div className="absolute top-0 left-8 right-8 h-[2px] rounded-b-full bg-gradient-to-r from-transparent via-[rgba(212,160,23,0.3)] to-transparent" />
+
+              {/* Quote icon */}
+              <div className="w-10 h-10 rounded-xl bg-[rgba(212,160,23,0.1)] flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-[#D4A017]">
+                <Quote size={16} className="text-[#D4A017] group-hover:text-white transition-colors duration-300" strokeWidth={2} />
               </div>
 
               {/* Stars */}
-              <div className="flex gap-0.5 mb-3">
+              <div className="flex gap-0.5 mb-4">
                 {[...Array(5)].map((_, si) => (
-                  <Star key={si} size={13} className="text-gold fill-gold" />
+                  <Star key={si} size={13} className="text-[#D4A017] fill-[#D4A017]" />
                 ))}
               </div>
 
-              {/* Quote */}
-              <p className="text-[0.875rem] text-text-mid leading-[1.75] italic mb-5 flex-1">
-                &quot;{t.quote}&quot;
+              {/* Quote text */}
+              <p className="text-[0.9rem] text-[#4A4A4A] leading-[1.75] italic mb-6 flex-1">
+                &ldquo;{t.quote}&rdquo;
               </p>
 
+              {/* Divider */}
+              <div className="h-px bg-gradient-to-r from-transparent via-[#E8D5B0] to-transparent mb-5" />
+
               {/* Author */}
-              <div className="flex items-center gap-3 pt-4 border-t border-border-light">
-                <div className="w-[42px] h-[42px] rounded-full bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center text-white font-[800] text-[1rem] shrink-0">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-[800] text-[0.95rem] shrink-0 shadow-[0_4px_12px_rgba(212,160,23,0.3)]"
+                  style={{ background: "linear-gradient(135deg, #D4A017, #8B6B4A)" }}>
                   {t.avatar}
                 </div>
                 <div>
-                  <strong className="block text-[0.875rem] text-dark font-bold leading-tight">{t.name}</strong>
-                  <span className="text-[0.75rem] text-text-light">{t.role}</span>
+                  <strong className="block text-[0.875rem] text-[#6B4C2A] font-bold leading-snug">{t.name}</strong>
+                  <span className="text-[0.78rem] text-[#7A7A7A]">{t.role}</span>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Social proof bar */}
+        <div className="mt-12 text-center">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-[#E8D5B0] shadow-sm text-[0.85rem] text-[#6B4C2A] font-semibold">
+            <span className="flex gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={12} className="text-[#D4A017] fill-[#D4A017]" />
+              ))}
+            </span>
+            <span>Rated 4.9/5 from 500+ verified customers</span>
+          </div>
         </div>
       </div>
     </section>

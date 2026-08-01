@@ -1,9 +1,8 @@
 import Link from "next/link";
 import type { FC } from "react";
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { SITE, FOOTER_LINKS, SOCIAL_LINKS } from "@/lib/constants";
 
-// Brand SVGs — included inline because lucide-react v1 removed social icons
 function IconFacebook({ size = 16 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -48,28 +47,31 @@ const SOCIAL_ITEMS: SocialItem[] = [
 
 export default function Footer() {
   return (
-    <footer className="footer-bg text-white/75 pt-[60px]">
-      <div className="max-w-[1180px] mx-auto px-5 sm:px-7 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.4fr] gap-x-6 gap-y-10 pb-12 border-b border-white/8">
+    <footer className="footer-bg text-white/75 pt-[64px]">
+      <div className="max-w-[1200px] mx-auto px-6">
+
+        {/* Top rule */}
+        <div className="h-px w-full mb-12"
+          style={{ background: "linear-gradient(90deg, transparent, rgba(212,160,23,0.3), transparent)" }} />
+
+        <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-x-10 gap-y-10 pb-12 border-b border-white/6">
 
           {/* Brand column */}
           <div className="col-span-2 lg:col-span-1">
-            <div className="text-gold-bright text-[0.72rem] tracking-[1.5px] uppercase mb-1.5 font-bold">
+            <p className="text-[0.68rem] font-bold uppercase tracking-[2px] text-[rgba(240,192,64,0.55)] mb-4">
               Eggcellence Since {SITE.founded}
-            </div>
+            </p>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/logo/logo.svg"
+              src="/images/logo/logo.jpg"
               alt={`${SITE.name} logo`}
-              className="h-14 w-auto object-contain brightness-110 drop-shadow-[0_2px_6px_rgba(0,0,0,.3)] mb-3.5"
+              className="w-14 h-14 object-cover rounded-xl mb-4 ring-2 ring-[rgba(212,160,23,0.3)]"
             />
-            <p className="text-[0.875rem] leading-7 max-w-[260px]">
-              Premium country chicken eggs from free-range farms. Fresh, natural, and delivered
-              with care every single day.
+            <h3 className="font-heading text-[1.25rem] text-[#F0C040] font-bold mb-2.5">{SITE.name}</h3>
+            <p className="text-[0.875rem] leading-[1.75] max-w-[250px] text-white/50 mb-6">
+              Your trusted supplier of premium country chicken eggs. Naturally raised, freshly delivered, nutritiously superior.
             </p>
-
-            {/* Social icons */}
-            <div className="flex gap-2.5 mt-5">
+            <div className="flex gap-2">
               {SOCIAL_ITEMS.map((s) => (
                 <a
                   key={s.label}
@@ -77,9 +79,9 @@ export default function Footer() {
                   aria-label={`${SITE.name} on ${s.label}`}
                   target={s.external ? "_blank" : undefined}
                   rel={s.external ? "noopener noreferrer" : undefined}
-                  className="w-9 h-9 rounded-lg bg-white/7 border border-white/12 flex items-center justify-center text-white/60 hover:bg-gold hover:border-gold hover:text-white transition-all duration-300"
+                  className="w-9 h-9 rounded-full bg-white/6 border border-white/10 flex items-center justify-center text-white/60 hover:bg-[#D4A017] hover:border-[#D4A017] hover:text-white hover:-translate-y-1 transition-all duration-300"
                 >
-                  <s.Icon size={16} />
+                  <s.Icon size={15} />
                 </a>
               ))}
             </div>
@@ -87,7 +89,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading text-[0.8rem] font-[800] text-white tracking-[1.5px] uppercase mb-4">
+            <h4 className="font-heading text-[0.95rem] text-[#F0C040] font-bold mb-5 tracking-[0.3px]">
               Quick Links
             </h4>
             <ul className="flex flex-col gap-2.5">
@@ -95,8 +97,9 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-[0.875rem] text-white/60 hover:text-gold-bright hover:pl-1 transition-all duration-300 inline-block"
+                    className="text-[0.85rem] text-white/55 hover:text-[#F0C040] hover:pl-1.5 transition-all duration-250 inline-flex items-center gap-1.5 group"
                   >
+                    <span className="text-[#D4A017] text-[0.6rem] opacity-0 group-hover:opacity-100 transition-opacity duration-200">▶</span>
                     {link.label}
                   </Link>
                 </li>
@@ -106,7 +109,7 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <h4 className="font-heading text-[0.8rem] font-[800] text-white tracking-[1.5px] uppercase mb-4">
+            <h4 className="font-heading text-[0.95rem] text-[#F0C040] font-bold mb-5 tracking-[0.3px]">
               Products
             </h4>
             <ul className="flex flex-col gap-2.5">
@@ -114,8 +117,9 @@ export default function Footer() {
                 <li key={`${link.label}-${i}`}>
                   <Link
                     href={link.href}
-                    className="text-[0.875rem] text-white/60 hover:text-gold-bright hover:pl-1 transition-all duration-300 inline-block"
+                    className="text-[0.85rem] text-white/55 hover:text-[#F0C040] hover:pl-1.5 transition-all duration-250 inline-flex items-center gap-1.5 group"
                   >
+                    <span className="text-[#D4A017] text-[0.6rem] opacity-0 group-hover:opacity-100 transition-opacity duration-200">▶</span>
                     {link.label}
                   </Link>
                 </li>
@@ -125,35 +129,31 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-heading text-[0.8rem] font-[800] text-white tracking-[1.5px] uppercase mb-4">
-              Contact
+            <h4 className="font-heading text-[0.95rem] text-[#F0C040] font-bold mb-5 tracking-[0.3px]">
+              Contact Us
             </h4>
-            <ul className="flex flex-col gap-3">
-              <li className="flex gap-2.5 items-start">
-                <Phone size={14} className="text-gold mt-[3px] shrink-0" aria-hidden="true" />
-                <a
-                  href={`tel:${SITE.phone}`}
-                  className="text-[0.875rem] text-white/60 hover:text-gold-bright transition-colors duration-200"
-                >
-                  {SITE.phoneFormatted}
-                </a>
-              </li>
-              <li className="flex gap-2.5 items-start">
-                <Mail size={14} className="text-gold mt-[3px] shrink-0" aria-hidden="true" />
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="text-[0.875rem] text-white/60 hover:text-gold-bright transition-colors duration-200"
-                >
+            <ul className="flex flex-col gap-4">
+              <li className="flex gap-3 items-start">
+                <div className="w-7 h-7 rounded-lg bg-[rgba(212,160,23,0.12)] flex items-center justify-center shrink-0 mt-0.5">
+                  <Mail size={13} className="text-[#D4A017]" aria-hidden="true" />
+                </div>
+                <a href={`mailto:${SITE.email}`} className="text-[0.85rem] text-white/55 hover:text-[#F0C040] transition-colors duration-200 break-all">
                   {SITE.email}
                 </a>
               </li>
-              <li className="flex gap-2.5 items-start">
-                <MapPin size={14} className="text-gold mt-[3px] shrink-0" aria-hidden="true" />
-                <span className="text-[0.875rem] text-white/60">{SITE.location}</span>
+              <li className="flex gap-3 items-start">
+                <div className="w-7 h-7 rounded-lg bg-[rgba(212,160,23,0.12)] flex items-center justify-center shrink-0 mt-0.5">
+                  <Phone size={13} className="text-[#D4A017]" aria-hidden="true" />
+                </div>
+                <a href={`tel:${SITE.phone}`} className="text-[0.85rem] text-white/55 hover:text-[#F0C040] transition-colors duration-200">
+                  {SITE.phoneFormatted}
+                </a>
               </li>
-              <li className="flex gap-2.5 items-start">
-                <Clock size={14} className="text-gold mt-[3px] shrink-0" aria-hidden="true" />
-                <span className="text-[0.875rem] text-white/60">{SITE.hours}</span>
+              <li className="flex gap-3 items-start">
+                <div className="w-7 h-7 rounded-lg bg-[rgba(212,160,23,0.12)] flex items-center justify-center shrink-0 mt-0.5">
+                  <Clock size={13} className="text-[#D4A017]" aria-hidden="true" />
+                </div>
+                <span className="text-[0.85rem] text-white/55">{SITE.hours}</span>
               </li>
             </ul>
           </div>
@@ -161,10 +161,15 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="text-center py-5 text-[0.78rem] text-white/35 px-5">
-        © {SITE.founded}{" "}
-        <span className="text-gold-bright">{SITE.name}</span> — Eggcellence Since {SITE.founded}.
-        All rights reserved.
+      <div className="max-w-[1200px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[0.8rem] text-white/35">
+        <p>
+          © {SITE.founded}{" "}
+          <span className="text-[#F0C040] font-semibold">{SITE.name}</span>.
+          {" "}All rights reserved.
+        </p>
+        <p className="text-white/25">
+          Designed with ❤️ for quality eggs
+        </p>
       </div>
     </footer>
   );

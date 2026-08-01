@@ -1,24 +1,26 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Lato } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BackToTop from "@/components/ui/BackToTop";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
+import LoadingScreen from "@/components/ui/LoadingScreen";
+import MobileCallBar from "@/components/ui/MobileCallBar";
 import { ToastProvider } from "@/components/ui/Toast";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-heading",
   display: "swap",
-  weight: ["700", "800", "900"],
+  weight: ["400", "600", "700", "800"],
 });
 
-const lato = Lato({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
-  weight: ["300", "400", "700", "900"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -43,29 +45,22 @@ export const metadata: Metadata = {
     description: "Premium Country Chicken Eggs. Farm fresh, free-range, delivered daily across Tamil Nadu.",
     images: ["/images/og/og-default.svg"],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: "/images/logo/logo.svg",
-  },
+  robots: { index: true, follow: true },
+  icons: { icon: "/images/logo/logo.svg" },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${lato.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
       <body>
         <ToastProvider>
+          <LoadingScreen />
           <Header />
           <main>{children}</main>
           <Footer />
           <BackToTop />
           <WhatsAppFloat />
+          <MobileCallBar />
         </ToastProvider>
       </body>
     </html>
