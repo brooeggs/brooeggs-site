@@ -5,7 +5,25 @@ import CTABanner from "@/components/home/CTABanner";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "About Broog's — Our story, mission, and commitment to farm-fresh country eggs.",
+  description:
+    "About Broog's (Broo Eggs) — Our story, mission, and commitment to farm-fresh free-range country chicken eggs across Tamil Nadu since 2025.",
+  keywords: [
+    "about brooeggs",
+    "about broo eggs",
+    "broog's story",
+    "country eggs Tamil Nadu",
+    "free range eggs farm",
+    "nattu muttai farm Tamil Nadu",
+    "ethical egg farming",
+    "Tamil Nadu egg supplier",
+  ],
+  alternates: { canonical: "https://brooeggs.com/about" },
+  openGraph: {
+    title: "About Broog's — Our Story & Mission",
+    description:
+      "Broo Eggs (Broog's) — A passion for real food, ethical farming, and fresh country chicken eggs delivered across Tamil Nadu since 2025.",
+    url: "https://brooeggs.com/about",
+  },
 };
 
 const checklist = [

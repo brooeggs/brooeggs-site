@@ -4,7 +4,27 @@ import CTABanner from "@/components/home/CTABanner";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "Broog's Products — Premium country chicken eggs in retail, tray, and bulk packs.",
+  description:
+    "Broog's (Broo Eggs) Products — Premium country chicken eggs in 6-pack, 12-pack, 30-egg tray, 90-egg half case, 180-egg bulk case, and wholesale options. Delivered across Tamil Nadu.",
+  keywords: [
+    "country chicken eggs buy online",
+    "brooeggs products",
+    "broo eggs packs",
+    "nattu muttai price Tamil Nadu",
+    "egg tray 30 eggs",
+    "bulk eggs Tamil Nadu",
+    "wholesale country eggs",
+    "free range eggs buy",
+    "farm fresh eggs Tamil Nadu",
+    "desi eggs online order",
+  ],
+  alternates: { canonical: "https://brooeggs.com/products" },
+  openGraph: {
+    title: "Broog's Products — Country Chicken Eggs | Retail to Wholesale",
+    description:
+      "Broo Eggs (Broog's) — Shop 6-pack to 180-egg bulk cases of premium free-range country chicken eggs. Delivered fresh across Tamil Nadu.",
+    url: "https://brooeggs.com/products",
+  },
 };
 
 const introCards = [
