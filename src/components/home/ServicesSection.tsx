@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 const services = [
   { num: "01", icon: "🛒", title: "Retail Packs",       desc: "Convenient 6-egg and 12-egg packs for households. Sealed fresh, easy to carry, and perfect for everyday cooking.", href: "/products", linkText: "View Details" },
@@ -17,7 +17,7 @@ export default function ServicesSection() {
           <div className="section-eyebrow">What We Offer</div>
           <h2 className="section-title">Our <strong>Products &amp; Services</strong></h2>
           <p className="section-desc" style={{ margin: "0 auto" }}>
-            From small retail packs to large commercial orders — Broog&apos;s has the right egg for every kitchen and every scale.
+            From small retail packs to large commercial orders — Brooeggs has the right egg for every kitchen and every scale.
           </p>
         </div>
         <div className="services-full-grid">

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, FormEvent } from "react";
 import Link from "next/link";
@@ -91,7 +91,7 @@ export default function ContactPage() {
               <span>Contact</span>
             </nav>
             <div className="section-eyebrow" style={{ marginTop: 14 }}>Get In Touch</div>
-            <h1>Contact <em>Broog&apos;s</em></h1>
+            <h1>Contact <em>Brooeggs</em></h1>
             <p>For orders, wholesale enquiries, delivery questions, or anything else — we&apos;re here to help.</p>
           </div>
         </div>
@@ -171,7 +171,7 @@ export default function ContactPage() {
                 </div>
                 <div className="form-group" style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
                   <input type="checkbox" id="newsletter" name="newsletter" checked={formData.newsletter} onChange={handleChange} style={{ width: 16, height: 16, accentColor: "#C8851A", flexShrink: 0 }} />
-                  <label htmlFor="newsletter" style={{ fontSize: ".83rem", color: "#6B5D47", cursor: "pointer" }}>Subscribe to updates and seasonal offers from Broog&apos;s</label>
+                  <label htmlFor="newsletter" style={{ fontSize: ".83rem", color: "#6B5D47", cursor: "pointer" }}>Subscribe to updates and seasonal offers from Brooeggs</label>
                 </div>
                 <button type="submit" className="btn btn-gold w-full justify-center" disabled={loading} style={{ width: "100%", justifyContent: "center" }}>
                   {loading ? "Sending…" : "✉️ Send Message"}
@@ -183,7 +183,7 @@ export default function ContactPage() {
             <div className="reveal reveal-right">
               <div className="contact-info-box">
                 <h3>🏢 Business Details</h3>
-                <div className="cinfo-row"><span style={{ color: "#C8851A" }}>🏪</span><div><strong>Business Name</strong><p>Broog&apos;s — Premium Country Eggs</p></div></div>
+                <div className="cinfo-row"><span style={{ color: "#C8851A" }}>🏪</span><div><strong>Business Name</strong><p>Brooeggs — Premium Country Eggs</p></div></div>
                 <div className="cinfo-row"><span style={{ color: "#C8851A" }}>📍</span><div><strong>Service Area</strong><p>Tamil Nadu, India (expanding)</p></div></div>
                 <div className="cinfo-row"><span style={{ color: "#C8851A" }}>📞</span><div><strong>Phone / WhatsApp</strong><p><a href={`tel:${SITE.phone}`}>{SITE.phoneFormatted}</a></p></div></div>
                 <div className="cinfo-row"><span style={{ color: "#C8851A" }}>✉️</span><div><strong>Email</strong><p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p></div></div>
@@ -196,7 +196,7 @@ export default function ContactPage() {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.265!2d77.0266!3d11.0168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAxJzAwLjQiTiA3N8KwMDEnMzUuOCJF!5e0!3m2!1sen!2sin!4v1700000000000"
                   width="100%" height="180"
                   style={{ border: 0, borderRadius: 8, display: "block" }}
-                  allowFullScreen loading="lazy" title="Broog's location"
+                  allowFullScreen loading="lazy" title="Brooeggs location"
                 />
                 <p style={{ fontSize: ".75rem", color: "#9E8E75", marginTop: 8 }}>ℹ️ Replace with your exact business address for accurate location.</p>
               </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import StatsBar from "@/components/home/StatsBar";
 import CTABanner from "@/components/home/CTABanner";
@@ -6,11 +6,11 @@ import CTABanner from "@/components/home/CTABanner";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "About Broog's (Broo Eggs) — Our story, mission, and commitment to farm-fresh free-range country chicken eggs across Tamil Nadu since 2025.",
+    "About Brooeggs (Broo Eggs) — Our story, mission, and commitment to farm-fresh free-range country chicken eggs across Tamil Nadu since 2025.",
   keywords: [
-    "about brooeggs",
+    "About Brooeggs",
     "about broo eggs",
-    "broog's story",
+    "Brooeggs story",
     "country eggs Tamil Nadu",
     "free range eggs farm",
     "nattu muttai farm Tamil Nadu",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://brooeggs.com/about" },
   openGraph: {
-    title: "About Broog's — Our Story & Mission",
+    title: "About Brooeggs — Our Story & Mission",
     description:
-      "Broo Eggs (Broog's) — A passion for real food, ethical farming, and fresh country chicken eggs delivered across Tamil Nadu since 2025.",
+      "Broo Eggs (Brooeggs) — A passion for real food, ethical farming, and fresh country chicken eggs delivered across Tamil Nadu since 2025.",
     url: "https://brooeggs.com/about",
   },
 };
@@ -36,7 +36,7 @@ const checklist = [
 const mvCards = [
   { icon: "🎯", title: "Our Mission",   desc: "To make premium, genuinely natural country chicken eggs accessible to every household and business — without compromising on quality, freshness, or ethical farming practices." },
   { icon: "👁️", title: "Our Vision",    desc: "To become South India's most trusted name in farm-fresh, natural eggs — recognised for quality you can see, smell, and taste in every single egg we deliver." },
-  { icon: "❤️", title: "Our Promise",   desc: "Every egg you receive from Broog's was laid by a free-range hen, inspected by our team, and dispatched the same morning. That promise never changes." },
+  { icon: "❤️", title: "Our Promise",   desc: "Every egg you receive from Brooeggs was laid by a free-range hen, inspected by our team, and dispatched the same morning. That promise never changes." },
   { icon: "🤝", title: "Our Community", desc: "We reinvest in the farmers and communities that make our eggs possible. Fair prices, long-term relationships, and sustainable growth for everyone in the chain." },
 ];
 
@@ -69,7 +69,7 @@ export default function AboutPage() {
               <span>About Us</span>
             </nav>
             <div className="section-eyebrow" style={{ marginTop: 14 }}>Our Story</div>
-            <h1>About <em>Broog&apos;s</em></h1>
+            <h1>About <em>Brooeggs</em></h1>
             <p>A passion for real food, ethical farming, and the people who make it possible — since 2025.</p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
               <h2 className="section-title">Started with a Simple <strong>Belief</strong></h2>
               <div style={{ width: 44, height: 3, background: "#C8851A", borderRadius: 2, margin: "16px 0 20px" }} />
               <p className="section-desc" style={{ maxWidth: "100%" }}>
-                Broog&apos;s was built on one simple idea — that people deserve eggs the way nature intended them: fresh from a free-range farm, laid by a healthy hen, and on your table the same day.
+                Brooeggs was built on one simple idea — that people deserve eggs the way nature intended them: fresh from a free-range farm, laid by a healthy hen, and on your table the same day.
               </p>
               <p style={{ fontSize: "1rem", color: "#6B5D47", lineHeight: 1.75, marginTop: 14, marginBottom: 24 }}>
                 What started as a passion project connecting small Tamil Nadu farms with quality-conscious customers quickly grew into a trusted regional supplier. We now serve thousands of households, restaurants, and retail partners who share our belief that real food matters.
@@ -160,7 +160,7 @@ export default function AboutPage() {
       <section className="sec-pad" style={{ background: "#FAF6EE" }}>
         <div className="container">
           <div className="text-center" style={{ marginBottom: 48 }}>
-            <div className="section-eyebrow">Why Broog&apos;s</div>
+            <div className="section-eyebrow">Why Brooeggs</div>
             <h2 className="section-title">Six Reasons Customers <strong>Stay With Us</strong></h2>
           </div>
           <div className="services-full-grid">

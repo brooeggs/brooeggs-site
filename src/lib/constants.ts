@@ -1,7 +1,7 @@
-export const SITE = {
-  name: "Broog's",
+﻿export const SITE = {
+  name: "Brooeggs",
   tagline: "Fresh Eggs For You, Everyday!",
-  description: "Broog's — Premium Country Chicken Eggs. Farm fresh, free-range, delivered daily across Tamil Nadu.",
+  description: "Brooeggs — Premium Country Chicken Eggs. Farm fresh, free-range, delivered daily across Tamil Nadu.",
   phone: "+919865643953",
   phoneFormatted: "+91 9865 643953",
   email: "support@brooeggs.com",
@@ -40,7 +40,7 @@ export const STATS = [
 export const PRODUCTS = [
   {
     name: "Starter Pack — 6 Eggs",
-    desc: "Perfect for individuals, couples, or anyone trying Broog's for the first time.",
+    desc: "Perfect for individuals, couples, or anyone trying Brooeggs for the first time.",
     emoji: "🥚",
     features: ["6 premium country eggs", "Hygiene-sealed pack", "Great for first-time buyers", "Same-day fresh"],
     cta: "Order Now",
@@ -102,13 +102,13 @@ export const TESTIMONIALS = [
     avatar: "R",
   },
   {
-    quote: "We switched our hotel kitchen to Broog's six months ago. Our breakfast guests notice the difference immediately — richer taste, better texture. Highly recommended.",
+    quote: "We switched our hotel kitchen to Brooeggs six months ago. Our breakfast guests notice the difference immediately — richer taste, better texture. Highly recommended.",
     name: "Karthik Menon",
     role: "Hotel Owner, Coimbatore",
     avatar: "K",
   },
   {
-    quote: "Delivery is always on time, the packaging is neat and the quality is rock-solid every single batch. As a nutritionist I'm confident recommending Broog's to all my clients.",
+    quote: "Delivery is always on time, the packaging is neat and the quality is rock-solid every single batch. As a nutritionist I'm confident recommending Brooeggs to all my clients.",
     name: "Priya Anand",
     role: "Nutritionist, Madurai",
     avatar: "P",

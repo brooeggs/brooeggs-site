@@ -1,7 +1,7 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "About Broog's — Our Story & Mission | Country Eggs Tamil Nadu";
+export const alt = "About Brooeggs — Our Story & Mission | Country Eggs Tamil Nadu";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -43,7 +43,7 @@ export default function OgImage() {
             Our Story
           </div>
           <div style={{ fontSize: 76, fontWeight: 900, color: "#F0C040", letterSpacing: "-2px", lineHeight: 1 }}>
-            About Broog&apos;s
+            About Brooeggs
           </div>
           <div style={{ width: 100, height: 3, background: "linear-gradient(90deg, transparent, #C8851A, transparent)", borderRadius: 2 }} />
           <div style={{ fontSize: 26, color: "rgba(255,255,255,0.80)", fontFamily: "Arial, sans-serif", textAlign: "center", maxWidth: 700 }}>

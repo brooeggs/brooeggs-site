@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { SITE } from "@/lib/constants";
 
 interface CTABannerProps {
@@ -31,7 +31,7 @@ const content = {
     ],
   },
   about: {
-    title: "Taste the Broog\u2019s Difference",
+    title: "Taste the Brooeggs Difference",
     desc: "Order today and experience what real country eggs taste and feel like.",
     buttons: [
       { href: "/products",            label: "View Products", dark: true,  external: false },

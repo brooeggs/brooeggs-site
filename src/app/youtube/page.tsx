@@ -1,9 +1,9 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "YouTube",
-  description: "Soon — Broog's YouTube channel coming.",
+  description: "Soon — Brooeggs YouTube channel coming.",
 };
 
 export default function YouTubePage() {

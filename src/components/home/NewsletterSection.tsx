@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 
@@ -16,11 +16,11 @@ export default function NewsletterSection() {
       <div className="container">
         <div className="newsletter-wrap reveal reveal-up">
           <div className="nl-icon" aria-hidden="true">✉️</div>
-          <h2>Stay Updated with Broog&apos;s</h2>
+          <h2>Stay Updated with Brooeggs</h2>
           <p>Subscribe for seasonal offers, new product updates, healthy egg recipes, and farm news delivered to your inbox.</p>
           {submitted ? (
             <div style={{ padding: "14px 16px", borderRadius: 8, background: "rgba(56,142,60,.08)", border: "1px solid rgba(56,142,60,.3)", color: "#2e7d32", fontSize: ".875rem", display: "flex", alignItems: "center", gap: 10, justifyContent: "center" }}>
-              ✓ You&apos;re subscribed! Welcome to Broog&apos;s updates.
+              ✓ You&apos;re subscribed! Welcome to Brooeggs updates.
             </div>
           ) : (
             <form className="nl-form" onSubmit={handleSubmit} noValidate>

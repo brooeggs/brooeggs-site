@@ -1,9 +1,9 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Instagram",
-  description: "Soon — Broog's Instagram page coming.",
+  description: "Soon — Brooeggs Instagram page coming.",
 };
 
 export default function InstagramPage() {

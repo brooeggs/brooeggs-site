@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 const serviceCards = [
   { emoji: "🐔", title: "The Best Hens",  desc: "Indigenous free-range breeds raised on natural grain and pasture. Happy hens lay better eggs — it's that simple." },
@@ -21,7 +21,7 @@ export default function IntroSection() {
             </h2>
             <div className="intro-divider" />
             <p className="intro-lead">
-              At Broog&apos;s, we believe great food starts with great farming. Our country chicken eggs come from hens that roam freely, eat naturally, and live well — and you can taste that difference in every single egg.
+              At Brooeggs, we believe great food starts with great farming. Our country chicken eggs come from hens that roam freely, eat naturally, and live well — and you can taste that difference in every single egg.
             </p>
             <p className="intro-lead">
               We supply households, restaurants, hotels, and retailers across the region with unwavering freshness and quality, day after day.

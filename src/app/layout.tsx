@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
@@ -26,15 +26,15 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: {
-    default: "Broog's — Fresh Eggs For You, Everyday!",
-    template: "%s | Broog's",
+    default: "Brooeggs — Fresh Eggs For You, Everyday!",
+    template: "%s | Brooeggs",
   },
   description:
-    "Broog's (also known as Broo Eggs) — Premium Country Chicken Eggs. Farm fresh, free-range, delivered daily across Tamil Nadu.",
+    "Brooeggs (also known as Broo Eggs) — Premium Country Chicken Eggs. Farm fresh, free-range, delivered daily across Tamil Nadu.",
   keywords: [
     "brooeggs",
     "broo eggs",
-    "broog's",
+    "Brooeggs",
     "broogs",
     "country eggs",
     "country chicken eggs",
@@ -55,25 +55,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "Broog's",
+    siteName: "Brooeggs",
     url: "https://brooeggs.com",
-    title: "Broog's — Fresh Eggs For You, Everyday!",
+    title: "Brooeggs — Fresh Eggs For You, Everyday!",
     description:
-      "Broo Eggs (Broog's) — Premium Country Chicken Eggs. Farm fresh, free-range, delivered daily across Tamil Nadu.",
+      "Broo Eggs (Brooeggs) — Premium Country Chicken Eggs. Farm fresh, free-range, delivered daily across Tamil Nadu.",
     images: [
       {
         url: "/images/og/og-default.png",
         width: 1200,
         height: 630,
-        alt: "Broog's — Premium Country Chicken Eggs, Tamil Nadu",
+        alt: "Brooeggs — Premium Country Chicken Eggs, Tamil Nadu",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Broog's — Fresh Eggs For You, Everyday!",
+    title: "Brooeggs — Fresh Eggs For You, Everyday!",
     description:
-      "Broo Eggs (Broog's) — Premium Country Chicken Eggs. Farm fresh, free-range, delivered daily across Tamil Nadu.",
+      "Broo Eggs (Brooeggs) — Premium Country Chicken Eggs. Farm fresh, free-range, delivered daily across Tamil Nadu.",
     images: ["/images/og/og-default.png"],
   },
   robots: {
@@ -94,7 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {
         "@type": "Organization",
         "@id": "https://brooeggs.com/#organization",
-        name: "Broog's",
+        name: "Brooeggs",
         alternateName: ["Broo Eggs", "Brooeggs", "Broogs"],
         url: "https://brooeggs.com",
         logo: {
@@ -119,10 +119,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {
         "@type": "LocalBusiness",
         "@id": "https://brooeggs.com/#localbusiness",
-        name: "Broog's — Premium Country Eggs",
+        name: "Brooeggs — Premium Country Eggs",
         alternateName: ["Broo Eggs", "Brooeggs"],
         description:
-          "Broog's (Broo Eggs) supplies premium free-range country chicken eggs across Tamil Nadu. Farm fresh, collected daily, delivered to homes, restaurants, and businesses.",
+          "Brooeggs (Broo Eggs) supplies premium free-range country chicken eggs across Tamil Nadu. Farm fresh, collected daily, delivered to homes, restaurants, and businesses.",
         url: "https://brooeggs.com",
         telephone: "+91-9865643953",
         email: "support@brooeggs.com",
@@ -174,7 +174,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         "@type": "WebSite",
         "@id": "https://brooeggs.com/#website",
         url: "https://brooeggs.com",
-        name: "Broog's",
+        name: "Brooeggs",
         description: "Premium Country Chicken Eggs delivered across Tamil Nadu",
         publisher: { "@id": "https://brooeggs.com/#organization" },
         potentialAction: {

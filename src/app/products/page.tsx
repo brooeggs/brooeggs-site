@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import CTABanner from "@/components/home/CTABanner";
 
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Broog's (Broo Eggs) Products — Premium country chicken eggs in 6-pack, 12-pack, 30-egg tray, 90-egg half case, 180-egg bulk case, and wholesale options. Delivered across Tamil Nadu.",
+    "Brooeggs (Broo Eggs) Products — Premium country chicken eggs in 6-pack, 12-pack, 30-egg tray, 90-egg half case, 180-egg bulk case, and wholesale options. Delivered across Tamil Nadu.",
   keywords: [
     "country chicken eggs buy online",
     "brooeggs products",
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://brooeggs.com/products" },
   openGraph: {
-    title: "Broog's Products — Country Chicken Eggs | Retail to Wholesale",
+    title: "Brooeggs Products — Country Chicken Eggs | Retail to Wholesale",
     description:
-      "Broo Eggs (Broog's) — Shop 6-pack to 180-egg bulk cases of premium free-range country chicken eggs. Delivered fresh across Tamil Nadu.",
+      "Broo Eggs (Brooeggs) — Shop 6-pack to 180-egg bulk cases of premium free-range country chicken eggs. Delivered fresh across Tamil Nadu.",
     url: "https://brooeggs.com/products",
   },
 };
@@ -35,7 +35,7 @@ const introCards = [
 ];
 
 const products = [
-  { emoji: "🥚", name: "Starter Pack — 6 Eggs",    desc: "Perfect for individuals, couples, or anyone trying Broog's for the first time. Sealed fresh, compact, and easy to carry.", features: ["6 premium country eggs","Hygiene-sealed pack","Great for first-time buyers","Same-day fresh"], cta: "Order Now", ctaClass: "btn-outline-gold", featured: false, badge: null, imgStyle: {} },
+  { emoji: "🥚", name: "Starter Pack — 6 Eggs",    desc: "Perfect for individuals, couples, or anyone trying Brooeggs for the first time. Sealed fresh, compact, and easy to carry.", features: ["6 premium country eggs","Hygiene-sealed pack","Great for first-time buyers","Same-day fresh"], cta: "Order Now", ctaClass: "btn-outline-gold", featured: false, badge: null, imgStyle: {} },
   { emoji: "🐣", name: "Family Pack — 12 Eggs",    desc: "A handy dozen for small families and weekly home use. Our most convenient everyday household size.", features: ["12 premium country eggs","Stackable carton","Ideal for weekly buyers","Graded & sorted"], cta: "Order Now", ctaClass: "btn-outline-gold", featured: false, badge: null, imgStyle: {} },
   { emoji: "🍳", name: "Standard Tray — 30 Eggs",  desc: "Our bestselling tray. The perfect balance of quantity and value for households, small restaurants, and regular buyers.", features: ["30 graded country eggs","Classic pulp tray","Best household value","Priority dispatch"], cta: "Order Now", ctaClass: "btn-gold", featured: true, badge: "Best Seller", imgStyle: { background: "linear-gradient(145deg,#f5e0a0,#e8c85c)" } },
   { emoji: "📦", name: "Half Case — 90 Eggs",      desc: "Three trays in a box. For growing families, small cafes, and weekly buyers who want the convenience of bulk.", features: ["3 × 30-egg trays","Reinforced box","Better price per egg","Free delivery eligible"], cta: "Order Now", ctaClass: "btn-outline-gold", featured: false, badge: null, imgStyle: {} },
@@ -87,7 +87,7 @@ export default function ProductsPage() {
           <div className="intro-grid">
             <div className="reveal reveal-left">
               <div className="intro-overline">Signature Product</div>
-              <h2 className="section-title">Broog&apos;s Country <strong>Chicken Eggs</strong></h2>
+              <h2 className="section-title">Brooeggs Country <strong>Chicken Eggs</strong></h2>
               <div className="intro-divider" />
               <p className="intro-lead">Our country chicken eggs come from indigenous desi breeds raised on open, free-range farms. The result is a deeper, richer orange yolk with naturally higher omega-3, vitamin D, and protein content than any commercial egg.</p>
               <p className="intro-lead">Each egg is individually inspected, graded by size and weight, and packed the same day it&apos;s collected — so what arrives at your door is as fresh as possible.</p>
@@ -116,7 +116,7 @@ export default function ProductsPage() {
           <div className="text-center" style={{ marginBottom: 48 }}>
             <div className="section-eyebrow">Choose Your Pack</div>
             <h2 className="section-title">Available <strong>Pack Sizes</strong></h2>
-            <p className="section-desc" style={{ margin: "0 auto" }}>From individual packs to bulk commercial cases — there&apos;s a Broog&apos;s pack for every need and every scale.</p>
+            <p className="section-desc" style={{ margin: "0 auto" }}>From individual packs to bulk commercial cases — there&apos;s a Brooeggs pack for every need and every scale.</p>
           </div>
           <div className="products-grid">
             {products.map((p, i) => (
@@ -146,7 +146,7 @@ export default function ProductsPage() {
         <div className="container">
           <div className="text-center" style={{ marginBottom: 44 }}>
             <div className="section-eyebrow">Why Country Eggs</div>
-            <h2 className="section-title">Broog&apos;s vs <strong>Commercial Eggs</strong></h2>
+            <h2 className="section-title">Brooeggs vs <strong>Commercial Eggs</strong></h2>
             <p className="section-desc" style={{ margin: "0 auto" }}>The science-backed difference you can see in the yolk and taste in every bite.</p>
           </div>
           <div className="cmp-wrap reveal reveal-up">
@@ -154,7 +154,7 @@ export default function ProductsPage() {
               <thead>
                 <tr>
                   <th className="crit">Criteria</th>
-                  <th className="country"><div className="th-ic">🥚</div>Broog&apos;s Country Eggs</th>
+                  <th className="country"><div className="th-ic">🥚</div>Brooeggs Country Eggs</th>
                   <th><div className="th-ic">🏭</div>Commercial Eggs</th>
                 </tr>
               </thead>

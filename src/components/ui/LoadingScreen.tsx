@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 
@@ -19,7 +19,7 @@ export default function LoadingScreen() {
   if (!mounted) return null;
 
   return (
-    <div id="loader" className={hidden ? "hidden" : ""} role="status" aria-label="Loading Broog's">
+    <div id="loader" className={hidden ? "hidden" : ""} role="status" aria-label="Loading Brooeggs">
       <div className="loader-inner">
         <div className="loader-egg-anim" />
         <div className="loader-brand">Brooeggs</div>
