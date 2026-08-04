@@ -1,8 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const products = [
   {
-    emoji: "🥚",
+    img: "/images/img_003.jpeg",
     name: "Retail Pack — 6 Eggs",
     desc: "Ideal for individuals and small families. Fresh, sealed, and ready to cook the moment they arrive at your door.",
     features: ["6 premium country eggs", "Hygiene-sealed pack", "Same-day fresh"],
@@ -10,10 +11,9 @@ const products = [
     ctaClass: "btn-outline-gold",
     featured: false,
     badge: null,
-    imgStyle: {},
   },
   {
-    emoji: "🐣",
+    img: "/images/img_055.jpeg",
     name: "Standard Tray — 30 Eggs",
     desc: "Our bestselling tray — the perfect balance of quantity and value for households, small restaurants, and weekly buyers.",
     features: ["30 graded country eggs", "Classic egg tray", "Graded & sorted"],
@@ -21,10 +21,9 @@ const products = [
     ctaClass: "btn-gold",
     featured: true,
     badge: "Most Popular",
-    imgStyle: { background: "linear-gradient(145deg,#f5e0a0,#e8c85c)" },
   },
   {
-    emoji: "🍳",
+    img: "/images/img_007.jpeg",
     name: "Bulk Case — 180 Eggs",
     desc: "Six full trays in a reinforced box. Designed for restaurants, caterers, hotels, and bulk distributors.",
     features: ["6 × 30-egg trays", "Best price per egg", "Priority delivery"],
@@ -32,7 +31,6 @@ const products = [
     ctaClass: "btn-outline-gold",
     featured: false,
     badge: null,
-    imgStyle: {},
   },
 ];
 
@@ -51,8 +49,14 @@ export default function ProductsPreview() {
         <div className="products-grid">
           {products.map((p, i) => (
             <div key={i} className={`product-card reveal reveal-up${p.featured ? " featured" : ""}`}>
-              <div className="product-img-placeholder" style={p.imgStyle}>
-                <span>{p.emoji}</span>
+              <div className="product-img-placeholder" style={{ position: "relative", overflow: "hidden" }}>
+                <Image
+                  src={p.img}
+                  alt={p.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
                 {p.badge && <span className="product-badge">{p.badge}</span>}
               </div>
               <div className="product-body">

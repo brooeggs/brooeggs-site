@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import CTABanner from "@/components/home/CTABanner";
 import { SITE, SOCIAL_LINKS, FAQ_CONTACT } from "@/lib/constants";
 import { useToast } from "@/components/ui/Toast";
@@ -83,6 +84,7 @@ export default function ContactPage() {
     <>
       {/* Page Hero */}
       <section className="page-hero">
+        <Image src="/images/img_030.jpeg" alt="" fill className="object-cover" style={{ opacity: 0.38 }} priority />
         <div className="container">
           <div className="page-hero-inner">
             <nav className="breadcrumb" aria-label="Breadcrumb">

@@ -1,6 +1,8 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import CTABanner from "@/components/home/CTABanner";
+import ProductsHeroCarousel from "@/components/products/ProductsHeroCarousel";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -35,12 +37,12 @@ const introCards = [
 ];
 
 const products = [
-  { emoji: "🥚", name: "Starter Pack — 6 Eggs",    desc: "Perfect for individuals, couples, or anyone trying Brooeggs for the first time. Sealed fresh, compact, and easy to carry.", features: ["6 premium country eggs","Hygiene-sealed pack","Great for first-time buyers","Same-day fresh"], cta: "Order Now", ctaClass: "btn-outline-gold", featured: false, badge: null, imgStyle: {} },
-  { emoji: "🐣", name: "Family Pack — 12 Eggs",    desc: "A handy dozen for small families and weekly home use. Our most convenient everyday household size.", features: ["12 premium country eggs","Stackable carton","Ideal for weekly buyers","Graded & sorted"], cta: "Order Now", ctaClass: "btn-outline-gold", featured: false, badge: null, imgStyle: {} },
-  { emoji: "🍳", name: "Standard Tray — 30 Eggs",  desc: "Our bestselling tray. The perfect balance of quantity and value for households, small restaurants, and regular buyers.", features: ["30 graded country eggs","Classic pulp tray","Best household value","Priority dispatch"], cta: "Order Now", ctaClass: "btn-gold", featured: true, badge: "Best Seller", imgStyle: { background: "linear-gradient(145deg,#f5e0a0,#e8c85c)" } },
-  { emoji: "📦", name: "Half Case — 90 Eggs",      desc: "Three trays in a box. For growing families, small cafes, and weekly buyers who want the convenience of bulk.", features: ["3 × 30-egg trays","Reinforced box","Better price per egg","Free delivery eligible"], cta: "Order Now", ctaClass: "btn-outline-gold", featured: false, badge: null, imgStyle: {} },
-  { emoji: "🏭", name: "Bulk Case — 180 Eggs",     desc: "Six full trays in a reinforced case. The commercial standard for restaurants, hotels, caterers, and cloud kitchens.", features: ["6 × 30-egg trays","Best price per egg","Priority delivery","Invoice & receipt provided"], cta: "Get Quote", ctaClass: "btn-outline-gold", featured: false, badge: null, imgStyle: {} },
-  { emoji: "🤝", name: "Wholesale / Custom",       desc: "500+ eggs per order? We handle large-scale supply for distributors, retailers, and food manufacturers.", features: ["500+ eggs per order","Custom packaging options","Dedicated account manager","Flexible payment terms"], cta: "Enquire Now", ctaClass: "btn-outline-gold", featured: false, badge: null, imgStyle: {} },
+  { img: "/images/img_021.jpeg", name: "Starter Pack — 6 Eggs",    desc: "Perfect for individuals, couples, or anyone trying Brooeggs for the first time. Sealed fresh, compact, and easy to carry.", features: ["6 premium country eggs","Hygiene-sealed pack","Great for first-time buyers","Same-day fresh"], cta: "Order Now", ctaClass: "btn-outline-gold", featured: false, badge: null },
+  { img: "/images/img_022.jpeg", name: "Family Pack — 12 Eggs",    desc: "A handy dozen for small families and weekly home use. Our most convenient everyday household size.", features: ["12 premium country eggs","Stackable carton","Ideal for weekly buyers","Graded & sorted"], cta: "Order Now", ctaClass: "btn-outline-gold", featured: false, badge: null },
+  { img: "/images/img_023.jpeg", name: "Standard Tray — 30 Eggs",  desc: "Our bestselling tray. The perfect balance of quantity and value for households, small restaurants, and regular buyers.", features: ["30 graded country eggs","Classic pulp tray","Best household value","Priority dispatch"], cta: "Order Now", ctaClass: "btn-gold", featured: true, badge: "Best Seller" },
+  { img: "/images/img_024.jpeg", name: "Half Case — 90 Eggs",      desc: "Three trays in a box. For growing families, small cafes, and weekly buyers who want the convenience of bulk.", features: ["3 × 30-egg trays","Reinforced box","Better price per egg","Free delivery eligible"], cta: "Order Now", ctaClass: "btn-outline-gold", featured: false, badge: null },
+  { img: "/images/img_025.jpeg", name: "Bulk Case — 180 Eggs",     desc: "Six full trays in a reinforced case. The commercial standard for restaurants, hotels, caterers, and cloud kitchens.", features: ["6 × 30-egg trays","Best price per egg","Priority delivery","Invoice & receipt provided"], cta: "Get Quote", ctaClass: "btn-outline-gold", featured: false, badge: null },
+  { img: "/images/img_026.jpeg", name: "Wholesale / Custom",       desc: "500+ eggs per order? We handle large-scale supply for distributors, retailers, and food manufacturers.", features: ["500+ eggs per order","Custom packaging options","Dedicated account manager","Flexible payment terms"], cta: "Enquire Now", ctaClass: "btn-outline-gold", featured: false, badge: null },
 ];
 
 const comparison = [
@@ -65,21 +67,8 @@ const processSteps = [
 export default function ProductsPage() {
   return (
     <>
-      {/* Page Hero */}
-      <section className="page-hero">
-        <div className="container">
-          <div className="page-hero-inner">
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-              <Link href="/">Home</Link>
-              <span style={{ fontSize: ".55rem", opacity: .6 }}>›</span>
-              <span>Products</span>
-            </nav>
-            <div className="section-eyebrow" style={{ marginTop: 14 }}>What We Sell</div>
-            <h1>Our <em>Products</em></h1>
-            <p>Farm-fresh country eggs — available in sizes to suit every home, business, and budget.</p>
-          </div>
-        </div>
-      </section>
+      {/* Page Hero — auto-scrolling carousel of all 59 farm images */}
+      <ProductsHeroCarousel />
 
       {/* Intro */}
       <section className="sec-pad" style={{ background: "#FAF6EE" }}>
@@ -121,8 +110,8 @@ export default function ProductsPage() {
           <div className="products-grid">
             {products.map((p, i) => (
               <div key={i} className={`product-card reveal reveal-up${p.featured ? " featured" : ""}`}>
-                <div className="product-img-placeholder" style={p.imgStyle}>
-                  <span>{p.emoji}</span>
+                <div className="product-img-placeholder" style={{ position: "relative", overflow: "hidden" }}>
+                  <Image src={p.img} alt={p.name} fill className="object-cover" />
                   {p.badge && <span className="product-badge">{p.badge}</span>}
                 </div>
                 <div className="product-body">

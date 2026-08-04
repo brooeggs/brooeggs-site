@@ -1,9 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="hero" id="hero">
-      <div className="hero-inner">
+    <section className="hero" id="hero" style={{ position: "relative" }}>
+      {/* Background image */}
+      <Image
+        src="/images/img_001.jpeg"
+        alt=""
+        fill
+        className="object-cover"
+        style={{ opacity: 0.38, zIndex: 0 }}
+        priority
+      />
+      <div className="hero-inner" style={{ position: "relative", zIndex: 1 }}>
 
         {/* LEFT: Text */}
         <div className="hero-text">
@@ -46,9 +56,13 @@ export default function Hero() {
         {/* RIGHT: Visual */}
         <div className="hero-visual" style={{ animation: "fadeUp .7s .3s ease both", opacity: 0 }}>
           <div className="hero-photo-placeholder">
-            <span className="ph-egg2">🥚</span>
-            <span className="ph-chick">🐣</span>
-            <span className="ph-egg">🍳</span>
+            <Image
+              src="/images/img_055.jpeg"
+              alt="Fresh farm eggs"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
           <div className="hero-badge-float">
             <span className="hbf-icon">🥚</span>
@@ -65,7 +79,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="hero-scroll" aria-hidden="true">
+      <div className="hero-scroll" aria-hidden="true" style={{ position: "relative", zIndex: 1 }}>
         <span>Scroll</span>
         <div className="scroll-chevron" />
       </div>

@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import StatsBar from "@/components/home/StatsBar";
 import CTABanner from "@/components/home/CTABanner";
 
@@ -61,6 +62,7 @@ export default function AboutPage() {
     <>
       {/* Page Hero */}
       <section className="page-hero">
+        <Image src="/images/img_010.jpeg" alt="" fill className="object-cover" style={{ opacity: 0.38 }} priority />
         <div className="container">
           <div className="page-hero-inner">
             <nav className="breadcrumb" aria-label="Breadcrumb">
@@ -80,7 +82,9 @@ export default function AboutPage() {
         <div className="container">
           <div className="about-split">
             <div className="about-img-col reveal reveal-left" style={{ position: "relative" }}>
-              <div className="about-photo-placeholder">🐓</div>
+              <div className="about-photo-placeholder" style={{ position: "relative", overflow: "hidden" }}>
+                <Image src="/images/img_012.jpeg" alt="Brooeggs farm" fill className="object-cover" />
+              </div>
               <div className="about-badge">
                 <strong>2025</strong>
                 <span>Founded</span>
