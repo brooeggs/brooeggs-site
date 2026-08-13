@@ -4,6 +4,8 @@ import IntroSection from "@/components/home/IntroSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import StatsBar from "@/components/home/StatsBar";
 import ProductsPreview from "@/components/home/ProductsPreview";
+import TrustSection from "@/components/home/TrustSection";
+import BreedCategories from "@/components/products/BreedCategories";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import FAQSection from "@/components/home/FAQSection";
 import NewsletterSection from "@/components/home/NewsletterSection";
@@ -14,10 +16,12 @@ export default function HomePage() {
     <>
       <Hero />
       <FeaturesStrip />
+      <BreedCategories />
       <IntroSection />
       <ServicesSection />
       <StatsBar />
       <ProductsPreview />
+      <TrustSection />
       <TestimonialsSection />
       <FAQSection />
       <NewsletterSection />

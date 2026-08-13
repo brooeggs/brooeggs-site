@@ -1440,3 +1440,105 @@ button { cursor:pointer; font-family:var(--font-body); border:none; background:n
   .breed-card-img-wrap   { height: 180px; }
   .breed-short-desc      { display: block; }
 }
+
+/* ============================================================
+   TRUST SECTION — "Friendly Service You Can Trust"
+   ============================================================ */
+.trust-section {
+  background: linear-gradient(135deg, #2C1A0A 0%, #3D2810 100%);
+}
+.trust-section .section-eyebrow { color: #D4972A; }
+.trust-section .section-eyebrow::before,
+.trust-section .section-eyebrow::after { background: #D4972A; }
+.trust-section .section-title { color: #fff; }
+.trust-section .section-title strong { color: #D4972A; }
+.trust-section .section-desc { color: rgba(255,255,255,.6); margin: 0 auto 0; }
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.trust-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(200,133,26,.25);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: all 0.3s;
+}
+.trust-card:hover {
+  background: rgba(200,133,26,.08);
+  border-color: rgba(200,133,26,.5);
+  transform: translateY(-4px);
+}
+.trust-card-icon {
+  width: 52px; height: 52px;
+  background: rgba(200,133,26,.12);
+  border: 1px solid rgba(200,133,26,.3);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: #D4972A;
+  margin-bottom: 16px;
+}
+.trust-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem; font-weight: 700;
+  color: #fff; margin-bottom: 8px;
+}
+.trust-card p {
+  font-size: .85rem; color: rgba(255,255,255,.58);
+  line-height: 1.75; margin: 0;
+}
+
+/* responsive */
+@media (max-width: 1024px) { .trust-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px)  {
+  .trust-grid { grid-template-columns: 1fr; gap: 14px; }
+  .trust-card { padding: 20px 18px; }
+}
+
+/* breed grid — 6 cards */
+@media (min-width: 1101px) {
+  .breed-categories-grid { grid-template-columns: repeat(6, 1fr); gap: 16px; }
+}
+@media (min-width: 769px) and (max-width: 1100px) {
+  .breed-categories-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+}
+@media (max-width: 768px) {
+  .breed-categories-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+}
+@media (max-width: 360px) {
+  .breed-categories-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Product count placeholder (shown until image is provided) ── */
+.prod-count-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #F5EDD0, #EDD99A);
+  gap: 4px;
+}
+.prod-count-num {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #C8851A;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+.prod-count-unit {
+  font-size: .78rem;
+  font-weight: 700;
+  color: #A86E10;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+@media (max-width: 640px) {
+  .prod-count-num  { font-size: 2.4rem; }
+  .prod-count-unit { font-size: .7rem; }
+}

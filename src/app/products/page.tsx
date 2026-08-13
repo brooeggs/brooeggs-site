@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import CTABanner from "@/components/home/CTABanner";
 import ProductsHeroCarousel from "@/components/products/ProductsHeroCarousel";
-import BreedCategories from "@/components/products/BreedCategories";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -130,9 +129,6 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
-
-      {/* Breed Categories */}
-      <BreedCategories />
 
       {/* Comparison Table */}
       <section className="sec-pad" style={{ background: "#FAF6EE" }}>

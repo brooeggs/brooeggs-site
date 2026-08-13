@@ -35,18 +35,33 @@ const breeds = [
     ]
   },
   {
-    id: "siruvidai",
+    id: "siruvidai-hen",
     tamil: "சிறுவிடை கோழி",
-    english: "Siruvidai",
-    label: "Siruvidai",
-    imagePair: ["/images/Siru_vedaii_Hen.jpeg", "/images/Siru_vedaii_Rooster.jpeg"],
+    english: "Siruvidai Hen",
+    label: "Siruvidai — Hen",
+    image: "/images/Siru_vedaii_Hen.jpeg",
     tags: ["🥚 Small Dense Eggs", "🐟 Omega-3 Rich", "🌿 Nutrient-Dense"],
-    shortDesc: "Tamil Nadu's compact indigenous breed — smaller eggs packed with higher omega-3 and superior nutritional density.",
+    shortDesc: "The female Siruvidai — Tamil Nadu's compact indigenous hen, prized for small, nutrient-dense eggs with high omega-3 content.",
     detail: [
       "Siruvidai (சிறுவிடை) is an indigenous chicken ecotype native to the Cauvery Delta zone of Tamil Nadu — primarily found in Tiruvannamalai, Dharmapuri, Ariyalur, and Perambalur districts. 'Siru' (சிறு) means small, reflecting the breed's compact body and smaller egg size.",
       "Research published by TANUVAS and ICAR confirms that Siruvidai eggs, while smaller in size, are nutritionally superior in key parameters. They have a higher yolk-to-albumen ratio and concentrated levels of omega-3 fatty acids, making them ideal for health-conscious consumers.",
-      "Siruvidai chickens are exceptionally well-adapted to semi-arid conditions and thrive in backyard and free-range farming systems. Their natural foraging behaviour — feeding on insects, seeds, and greens — is the primary driver of their egg's rich nutritional profile.",
+      "Siruvidai hens are exceptionally well-adapted to semi-arid conditions and thrive in backyard and free-range farming systems. Their natural foraging behaviour — feeding on insects, seeds, and greens — is the primary driver of their egg's rich nutritional profile.",
       "A 2024 study on egg quality traits of indigenous Tamil Nadu breeds confirmed that Siruvidai eggs have excellent internal quality scores (Haugh Unit), indicating superior freshness and protein quality compared to commercial eggs."
+    ]
+  },
+  {
+    id: "siruvidai-rooster",
+    tamil: "சிறுவிடை சேவல்",
+    english: "Siruvidai Rooster",
+    label: "Siruvidai — Rooster",
+    image: "/images/Siru_vedaii_Rooster.jpeg",
+    tags: ["💪 Lean Build", "🌿 Free-Range", "🏆 Indigenous Breed"],
+    shortDesc: "The male Siruvidai — a lean, agile rooster whose strong genetics contribute directly to the superior nutritional quality of Siruvidai eggs.",
+    detail: [
+      "The Siruvidai rooster (சிறுவிடை சேவல்) is a lean, agile bird — smaller and more nimble than the Peruvidai rooster. Despite its compact build, it is highly energetic and well-suited to the free-range, semi-arid farming environments of the Cauvery Delta zone.",
+      "Studies by ICAR evaluating carcass characteristics of Siruvidai chickens confirm that the males have a higher eviscerated carcass yield relative to body weight — meaning leaner, denser muscle tissue compared to larger commercial breeds.",
+      "The genetic contribution of the Siruvidai rooster directly influences the egg quality of the hens. Farms that maintain pure Siruvidai roosters consistently produce eggs with better yolk colour, higher omega-3 content, and superior Haugh Unit scores.",
+      "At Brooeggs, we ensure our partner farms maintain healthy, pure-breed Siruvidai roosters to preserve the authentic nutritional profile of every Siruvidai egg we deliver."
     ]
   },
   {
@@ -62,6 +77,21 @@ const breeds = [
       "Sonali eggs are medium-sized with a distinctly golden-to-orange yolk. ICAR research confirms that CARI Sonali eggs are nutritionally comparable to pure indigenous breeds — with notably higher vitamin D, lower cholesterol than commercial broiler eggs, and superior serum lipid profiles in the birds themselves.",
       "Sonali birds are hardy, disease-resistant, and adapt well to Tamil Nadu's climate. They require less intensive care than commercial layers, making them ideal for sustainable, ethical farming — the exact model Brooeggs follows on our partner farms.",
       "Their eggs strike the ideal balance between the rich flavour of pure nattu kozhi and the consistent sizing preferred by households and restaurants — making Sonali one of our most popular egg varieties among regular customers."
+    ]
+  },
+  {
+    id: "black-hen",
+    tamil: "கருப்பு நாட்டுக்கோழி",
+    english: "Black Country Hen",
+    label: "Black Hen",
+    image: "/images/Black_hen.jpeg",
+    tags: ["🖤 Rare Breed", "🥚 Dark Yolk", "🌿 100% Free-Range"],
+    shortDesc: "A rare black-feathered indigenous hen — prized for intensely flavoured eggs with a dark, nutrient-dense yolk.",
+    detail: [
+      "The Black Country Hen (கருப்பு நாட்டுக்கோழி) is a rare and highly prized indigenous variety found across Tamil Nadu and parts of South India. Recognised by its striking all-black or dark-feathered plumage, this breed has been traditionally valued in villages for centuries.",
+      "Eggs from the black hen are notably smaller but exceptionally rich — with a darker yolk colour that signals higher concentrations of carotenoids, iron, and essential amino acids compared to standard country chicken eggs. Traditional Tamil medicine (Siddha) has long attributed specific health benefits to black hen eggs.",
+      "These hens are strictly free-range, foraging on a natural diet of grains, insects, and wild greens. They are rarely found in commercial settings, making their eggs a genuine farm-exclusive product — available only through trusted sources like Brooeggs.",
+      "Due to their scarcity and exceptional nutritional profile, black hen eggs command a premium in local markets and are particularly sought after for post-natal recovery, child nutrition, and general wellness in South Indian households."
     ]
   }
 ]
@@ -87,7 +117,7 @@ export default function BreedCategories() {
           </p>
         </div>
 
-        {/* 4-card grid */}
+        {/* 5-card grid */}
         <div className="breed-categories-grid">
           {breeds.map((b) => (
             <button
@@ -99,20 +129,13 @@ export default function BreedCategories() {
             >
               {/* Image area */}
               <div className="breed-card-img-wrap">
-                {"imagePair" in b && b.imagePair ? (
-                  <>
-                    <Image src={b.imagePair[0]} alt={`${b.english} Hen`}  fill
-                      className="object-cover breed-img breed-img-left"
-                      sizes="(max-width:640px) 50vw, (max-width:1024px) 25vw, 20vw" />
-                    <Image src={b.imagePair[1]} alt={`${b.english} Rooster`} fill
-                      className="object-cover breed-img breed-img-right"
-                      sizes="(max-width:640px) 50vw, (max-width:1024px) 25vw, 20vw" />
-                  </>
-                ) : (
-                  <Image src={(b as {image:string}).image} alt={b.english} fill
-                    className="object-cover"
-                    sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" />
-                )}
+                <Image
+                  src={(b as { image: string }).image}
+                  alt={b.english}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width:640px) 50vw, (max-width:1024px) 25vw, 20vw"
+                />
                 <div className="breed-img-overlay" />
                 <span className="breed-card-label">{b.label}</span>
 
