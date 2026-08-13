@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import CTABanner from "@/components/home/CTABanner";
 import ProductsHeroCarousel from "@/components/products/ProductsHeroCarousel";
+import BreedCategories from "@/components/products/BreedCategories";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -111,7 +112,7 @@ export default function ProductsPage() {
             {products.map((p, i) => (
               <div key={i} className={`product-card reveal reveal-up${p.featured ? " featured" : ""}`}>
                 <div className="product-img-placeholder" style={{ position: "relative", overflow: "hidden" }}>
-                  <Image src={p.img} alt={p.name} fill className="object-cover" />
+                  <Image src={p.img} alt={p.name} fill className="object-cover" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" />
                   {p.badge && <span className="product-badge">{p.badge}</span>}
                 </div>
                 <div className="product-body">
@@ -129,6 +130,9 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+
+      {/* Breed Categories */}
+      <BreedCategories />
 
       {/* Comparison Table */}
       <section className="sec-pad" style={{ background: "#FAF6EE" }}>
