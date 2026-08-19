@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const products = [
   {
-    img: null as string | null,           // ← replace null with image path when ready
+    img: "/images/6_eggs.jpeg" as string | null,
     count: "6",
     unit: "Eggs",
     name: "Retail Pack — 6 Eggs",
@@ -15,7 +15,7 @@ const products = [
     badge: null as string | null,
   },
   {
-    img: null as string | null,           // ← replace null with image path when ready
+    img: "/images/15_eggs.jpeg" as string | null,
     count: "30",
     unit: "Eggs Tray",
     name: "Standard Tray — 30 Eggs",
@@ -27,7 +27,7 @@ const products = [
     badge: "Most Popular" as string | null,
   },
   {
-    img: null as string | null,           // ← replace null with image path when ready
+    img: "/images/bulk_eggs.jpeg" as string | null,
     count: "180",
     unit: "Eggs · 6 Trays",
     name: "Bulk Case — 180 Eggs",
