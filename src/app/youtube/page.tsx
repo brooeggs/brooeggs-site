@@ -2,8 +2,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "YouTube",
-  description: "Soon — Brooeggs YouTube channel coming.",
+  title: "YouTube — Coming Soon",
+  description: "Brooeggs YouTube channel coming soon.",
+  robots: { index: false, follow: false },
 };
 
 export default function YouTubePage() {

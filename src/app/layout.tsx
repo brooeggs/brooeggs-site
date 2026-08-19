@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
@@ -24,6 +24,12 @@ const lato = Lato({
   weight: ["300", "400", "700", "900"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#D4A017",
+};
+
 export const metadata: Metadata = {
   title: {
     default: "Brooeggs — Fresh Eggs For You, Everyday!",
@@ -36,33 +42,37 @@ export const metadata: Metadata = {
     "broo eggs",
     "Brooeggs",
     "broogs",
+    "broo eggs Tamil Nadu",
     "country eggs",
     "country chicken eggs",
+    "nattu muttai",
+    "nattu kozhi muttai",
     "farm fresh eggs",
     "free range eggs",
-    "nattu kozhi muttai",
     "Tamil Nadu eggs",
     "organic eggs",
     "desi eggs",
     "free range country eggs Tamil Nadu",
     "buy eggs online Tamil Nadu",
     "fresh eggs delivery Tamil Nadu",
+    "egg delivery Tamil Nadu",
+    "brooeggs.in",
   ],
-  metadataBase: new URL("https://brooeggs.com"),
+  metadataBase: new URL("https://brooeggs.in"),
   alternates: {
-    canonical: "https://brooeggs.com",
+    canonical: "https://brooeggs.in",
   },
   openGraph: {
     type: "website",
     locale: "en_IN",
     siteName: "Brooeggs",
-    url: "https://brooeggs.com",
+    url: "https://brooeggs.in",
     title: "Brooeggs — Fresh Eggs For You, Everyday!",
     description:
       "Broo Eggs (Brooeggs) — Premium Country Chicken Eggs. Farm fresh, free-range, delivered daily across Tamil Nadu.",
     images: [
       {
-        url: "/images/og/og-default.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Brooeggs — Premium Country Chicken Eggs, Tamil Nadu",
@@ -74,7 +84,7 @@ export const metadata: Metadata = {
     title: "Brooeggs — Fresh Eggs For You, Everyday!",
     description:
       "Broo Eggs (Brooeggs) — Premium Country Chicken Eggs. Farm fresh, free-range, delivered daily across Tamil Nadu.",
-    images: ["/images/og/og-default.png"],
+    images: [{ url: "/opengraph-image", alt: "Brooeggs — Premium Country Chicken Eggs, Tamil Nadu" }],
   },
   robots: {
     index: true,
@@ -93,13 +103,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://brooeggs.com/#organization",
+        "@id": "https://brooeggs.in/#organization",
         name: "Brooeggs",
-        alternateName: ["Broo Eggs", "Brooeggs", "Broogs"],
-        url: "https://brooeggs.com",
+        alternateName: ["Broo Eggs", "Brooeggs", "Broogs", "Broo Eggs Tamil Nadu"],
+        url: "https://brooeggs.in",
         logo: {
           "@type": "ImageObject",
-          url: "https://brooeggs.com/images/logo/logo.jpg",
+          url: "https://brooeggs.in/images/logo/logo.svg",
           width: 512,
           height: 512,
         },
@@ -111,22 +121,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           areaServed: "IN",
         },
         sameAs: [
-          "https://www.facebook.com",
-          "https://www.instagram.com",
-          "https://www.youtube.com",
+          "https://www.facebook.com/brooeggs",
+          "https://www.instagram.com/brooeggs",
+          "https://www.youtube.com/@brooeggs",
         ],
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://brooeggs.com/#localbusiness",
+        "@id": "https://brooeggs.in/#localbusiness",
         name: "Brooeggs — Premium Country Eggs",
         alternateName: ["Broo Eggs", "Brooeggs"],
         description:
           "Brooeggs (Broo Eggs) supplies premium free-range country chicken eggs across Tamil Nadu. Farm fresh, collected daily, delivered to homes, restaurants, and businesses.",
-        url: "https://brooeggs.com",
+        url: "https://brooeggs.in",
         telephone: "+91-9865643953",
-        email: "support@brooeggs.com",
-        image: "https://brooeggs.com/images/og/og-default.png",
+        email: "support@brooeggs.in",
+        image: "https://brooeggs.in/opengraph-image",
         priceRange: "₹₹",
         currenciesAccepted: "INR",
         paymentAccepted: "Cash, UPI, Bank Transfer",
@@ -161,6 +171,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             { "@type": "Offer", itemOffered: { "@type": "Product", name: "Starter Pack — 6 Country Eggs" } },
             { "@type": "Offer", itemOffered: { "@type": "Product", name: "Family Pack — 12 Country Eggs" } },
             { "@type": "Offer", itemOffered: { "@type": "Product", name: "Standard Tray — 30 Country Eggs" } },
+            { "@type": "Offer", itemOffered: { "@type": "Product", name: "Half Case — 90 Country Eggs" } },
             { "@type": "Offer", itemOffered: { "@type": "Product", name: "Bulk Case — 180 Country Eggs" } },
           ],
         },
@@ -172,16 +183,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       },
       {
         "@type": "WebSite",
-        "@id": "https://brooeggs.com/#website",
-        url: "https://brooeggs.com",
+        "@id": "https://brooeggs.in/#website",
+        url: "https://brooeggs.in",
         name: "Brooeggs",
         description: "Premium Country Chicken Eggs delivered across Tamil Nadu",
-        publisher: { "@id": "https://brooeggs.com/#organization" },
-        potentialAction: {
-          "@type": "SearchAction",
-          target: { "@type": "EntryPoint", urlTemplate: "https://brooeggs.com/products" },
-          "query-input": "required name=search_term_string",
-        },
+        publisher: { "@id": "https://brooeggs.in/#organization" },
       },
     ],
   };

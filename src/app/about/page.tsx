@@ -5,26 +5,50 @@ import StatsBar from "@/components/home/StatsBar";
 import CTABanner from "@/components/home/CTABanner";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us — Our Story & Mission",
   description:
     "About Brooeggs (Broo Eggs) — Our story, mission, and commitment to farm-fresh free-range country chicken eggs across Tamil Nadu since 2025.",
   keywords: [
-    "About Brooeggs",
+    "about brooeggs",
     "about broo eggs",
     "Brooeggs story",
+    "brooeggs mission",
     "country eggs Tamil Nadu",
     "free range eggs farm",
     "nattu muttai farm Tamil Nadu",
     "ethical egg farming",
     "Tamil Nadu egg supplier",
+    "country chicken egg brand Tamil Nadu",
   ],
-  alternates: { canonical: "https://brooeggs.com/about" },
+  alternates: { canonical: "https://brooeggs.in/about" },
   openGraph: {
-    title: "About Brooeggs — Our Story & Mission",
+    title: "About Brooeggs — Our Story & Mission | Tamil Nadu",
     description:
       "Broo Eggs (Brooeggs) — A passion for real food, ethical farming, and fresh country chicken eggs delivered across Tamil Nadu since 2025.",
-    url: "https://brooeggs.com/about",
+    url: "https://brooeggs.in/about",
   },
+};
+
+const aboutBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home",     item: "https://brooeggs.in" },
+    { "@type": "ListItem", position: 2, name: "About Us", item: "https://brooeggs.in/about" },
+  ],
+};
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": "https://brooeggs.in/about#webpage",
+  url: "https://brooeggs.in/about",
+  name: "About Brooeggs — Our Story & Mission",
+  description:
+    "Brooeggs (Broo Eggs) was founded with a passion for real food and ethical farming. We supply premium free-range country chicken eggs across Tamil Nadu since 2025.",
+  isPartOf: { "@id": "https://brooeggs.in/#website" },
+  about: { "@id": "https://brooeggs.in/#organization" },
+  breadcrumb: { "@id": "https://brooeggs.in/about#breadcrumb" },
 };
 
 const checklist = [
@@ -60,6 +84,8 @@ const whyUs = [
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutBreadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }} />
       {/* Page Hero */}
       <section className="page-hero">
         <Image src="/images/img_010.jpeg" alt="" fill className="object-cover" style={{ opacity: 0.38 }} priority />

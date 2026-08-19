@@ -2,8 +2,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Instagram",
-  description: "Soon — Brooeggs Instagram page coming.",
+  title: "Instagram — Coming Soon",
+  description: "Brooeggs Instagram page coming soon.",
+  robots: { index: false, follow: false },
 };
 
 export default function InstagramPage() {

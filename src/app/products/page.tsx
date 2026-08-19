@@ -5,7 +5,7 @@ import CTABanner from "@/components/home/CTABanner";
 import ProductsHeroCarousel from "@/components/products/ProductsHeroCarousel";
 
 export const metadata: Metadata = {
-  title: "Products",
+  title: "Products — Country Chicken Eggs | Retail to Wholesale",
   description:
     "Brooeggs (Broo Eggs) Products — Premium country chicken eggs in 6-pack, 12-pack, 30-egg tray, 90-egg half case, 180-egg bulk case, and wholesale options. Delivered across Tamil Nadu.",
   keywords: [
@@ -13,20 +13,104 @@ export const metadata: Metadata = {
     "brooeggs products",
     "broo eggs packs",
     "nattu muttai price Tamil Nadu",
-    "egg tray 30 eggs",
+    "nattu muttai buy online",
+    "egg tray 30 eggs Tamil Nadu",
     "bulk eggs Tamil Nadu",
     "wholesale country eggs",
     "free range eggs buy",
     "farm fresh eggs Tamil Nadu",
     "desi eggs online order",
+    "country eggs 6 pack",
+    "country eggs wholesale Tamil Nadu",
   ],
-  alternates: { canonical: "https://brooeggs.com/products" },
+  alternates: { canonical: "https://brooeggs.in/products" },
   openGraph: {
     title: "Brooeggs Products — Country Chicken Eggs | Retail to Wholesale",
     description:
       "Broo Eggs (Brooeggs) — Shop 6-pack to 180-egg bulk cases of premium free-range country chicken eggs. Delivered fresh across Tamil Nadu.",
-    url: "https://brooeggs.com/products",
+    url: "https://brooeggs.in/products",
   },
+};
+
+const productsBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home",     item: "https://brooeggs.in" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://brooeggs.in/products" },
+  ],
+};
+
+const productsItemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://brooeggs.in/products#itemlist",
+  name: "Brooeggs — Country Chicken Egg Packs",
+  description: "Premium free-range country chicken egg packs from Brooeggs, available for retail and wholesale across Tamil Nadu.",
+  url: "https://brooeggs.in/products",
+  numberOfItems: 6,
+  itemListElement: [
+    {
+      "@type": "ListItem", position: 1,
+      item: {
+        "@type": "Product",
+        name: "Starter Pack — 6 Country Eggs",
+        description: "Perfect for individuals or couples trying Brooeggs for the first time. Hygiene-sealed, same-day fresh.",
+        brand: { "@type": "Brand", name: "Brooeggs" },
+        offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "INR", seller: { "@type": "Organization", name: "Brooeggs" } },
+      },
+    },
+    {
+      "@type": "ListItem", position: 2,
+      item: {
+        "@type": "Product",
+        name: "Family Pack — 12 Country Eggs",
+        description: "A handy dozen for small families and weekly home use.",
+        brand: { "@type": "Brand", name: "Brooeggs" },
+        offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "INR", seller: { "@type": "Organization", name: "Brooeggs" } },
+      },
+    },
+    {
+      "@type": "ListItem", position: 3,
+      item: {
+        "@type": "Product",
+        name: "Standard Tray — 30 Country Eggs",
+        description: "Our bestselling tray. The perfect balance of quantity and value for households and small restaurants.",
+        brand: { "@type": "Brand", name: "Brooeggs" },
+        offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "INR", seller: { "@type": "Organization", name: "Brooeggs" } },
+      },
+    },
+    {
+      "@type": "ListItem", position: 4,
+      item: {
+        "@type": "Product",
+        name: "Half Case — 90 Country Eggs",
+        description: "Three trays in a box for growing families, small cafes, and weekly bulk buyers.",
+        brand: { "@type": "Brand", name: "Brooeggs" },
+        offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "INR", seller: { "@type": "Organization", name: "Brooeggs" } },
+      },
+    },
+    {
+      "@type": "ListItem", position: 5,
+      item: {
+        "@type": "Product",
+        name: "Bulk Case — 180 Country Eggs",
+        description: "Six full trays in a reinforced case. The commercial standard for restaurants, hotels, caterers, and cloud kitchens.",
+        brand: { "@type": "Brand", name: "Brooeggs" },
+        offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "INR", seller: { "@type": "Organization", name: "Brooeggs" } },
+      },
+    },
+    {
+      "@type": "ListItem", position: 6,
+      item: {
+        "@type": "Product",
+        name: "Wholesale / Custom Order",
+        description: "500+ eggs per order for distributors, retailers, and food manufacturers. Custom packaging available.",
+        brand: { "@type": "Brand", name: "Brooeggs" },
+        offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "INR", seller: { "@type": "Organization", name: "Brooeggs" } },
+      },
+    },
+  ],
 };
 
 const introCards = [
@@ -67,6 +151,8 @@ const processSteps = [
 export default function ProductsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productsBreadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productsItemListSchema) }} />
       {/* Page Hero — auto-scrolling carousel of all 59 farm images */}
       <ProductsHeroCarousel />
 

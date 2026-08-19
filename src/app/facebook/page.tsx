@@ -2,8 +2,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Facebook",
-  description: "Soon — Brooeggs Facebook page coming.",
+  title: "Facebook — Coming Soon",
+  description: "Brooeggs Facebook page coming soon.",
+  robots: { index: false, follow: false },
 };
 
 export default function FacebookPage() {
