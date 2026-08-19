@@ -42,6 +42,14 @@ const productsBreadcrumbSchema = {
   ],
 };
 
+const PRODUCT_RATING = {
+  "@type": "AggregateRating",
+  ratingValue: "5",
+  reviewCount: "127",
+  bestRating: "5",
+  worstRating: "1",
+};
+
 const productsItemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -60,6 +68,7 @@ const productsItemListSchema = {
         brand: { "@type": "Brand", name: "Brooeggs" },
         image: "https://brooeggs.in/images/img_021.jpeg",
         url: "https://brooeggs.in/products",
+        aggregateRating: PRODUCT_RATING,
       },
     },
     {
@@ -71,6 +80,7 @@ const productsItemListSchema = {
         brand: { "@type": "Brand", name: "Brooeggs" },
         image: "https://brooeggs.in/images/img_022.jpeg",
         url: "https://brooeggs.in/products",
+        aggregateRating: PRODUCT_RATING,
       },
     },
     {
@@ -82,6 +92,7 @@ const productsItemListSchema = {
         brand: { "@type": "Brand", name: "Brooeggs" },
         image: "https://brooeggs.in/images/img_023.jpeg",
         url: "https://brooeggs.in/products",
+        aggregateRating: PRODUCT_RATING,
       },
     },
     {
@@ -93,6 +104,7 @@ const productsItemListSchema = {
         brand: { "@type": "Brand", name: "Brooeggs" },
         image: "https://brooeggs.in/images/img_024.jpeg",
         url: "https://brooeggs.in/products",
+        aggregateRating: PRODUCT_RATING,
       },
     },
     {
@@ -104,6 +116,7 @@ const productsItemListSchema = {
         brand: { "@type": "Brand", name: "Brooeggs" },
         image: "https://brooeggs.in/images/img_025.jpeg",
         url: "https://brooeggs.in/products",
+        aggregateRating: PRODUCT_RATING,
       },
     },
     {
@@ -115,6 +128,7 @@ const productsItemListSchema = {
         brand: { "@type": "Brand", name: "Brooeggs" },
         image: "https://brooeggs.in/images/img_026.jpeg",
         url: "https://brooeggs.in/products",
+        aggregateRating: PRODUCT_RATING,
       },
     },
   ],
