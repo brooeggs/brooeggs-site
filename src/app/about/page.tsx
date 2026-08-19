@@ -32,9 +32,10 @@ export const metadata: Metadata = {
 const aboutBreadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
+  "@id": "https://brooeggs.in/about#breadcrumb",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home",     item: "https://brooeggs.in" },
-    { "@type": "ListItem", position: 2, name: "About Us", item: "https://brooeggs.in/about" },
+    { "@type": "ListItem", position: 1, name: "Home",     item: { "@id": "https://brooeggs.in", name: "Home" } },
+    { "@type": "ListItem", position: 2, name: "About Us", item: { "@id": "https://brooeggs.in/about", name: "About Us" } },
   ],
 };
 
@@ -48,7 +49,6 @@ const aboutPageSchema = {
     "Brooeggs (Broo Eggs) was founded with a passion for real food and ethical farming. We supply premium free-range country chicken eggs across Tamil Nadu since 2025.",
   isPartOf: { "@id": "https://brooeggs.in/#website" },
   about: { "@id": "https://brooeggs.in/#organization" },
-  breadcrumb: { "@id": "https://brooeggs.in/about#breadcrumb" },
 };
 
 const checklist = [

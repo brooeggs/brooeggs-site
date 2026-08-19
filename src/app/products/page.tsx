@@ -35,9 +35,10 @@ export const metadata: Metadata = {
 const productsBreadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
+  "@id": "https://brooeggs.in/products#breadcrumb",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home",     item: "https://brooeggs.in" },
-    { "@type": "ListItem", position: 2, name: "Products", item: "https://brooeggs.in/products" },
+    { "@type": "ListItem", position: 1, name: "Home",     item: { "@id": "https://brooeggs.in", name: "Home" } },
+    { "@type": "ListItem", position: 2, name: "Products", item: { "@id": "https://brooeggs.in/products", name: "Products" } },
   ],
 };
 
@@ -57,7 +58,8 @@ const productsItemListSchema = {
         name: "Starter Pack — 6 Country Eggs",
         description: "Perfect for individuals or couples trying Brooeggs for the first time. Hygiene-sealed, same-day fresh.",
         brand: { "@type": "Brand", name: "Brooeggs" },
-        offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "INR", seller: { "@type": "Organization", name: "Brooeggs" } },
+        image: "https://brooeggs.in/images/img_021.jpeg",
+        url: "https://brooeggs.in/products",
       },
     },
     {
@@ -67,7 +69,8 @@ const productsItemListSchema = {
         name: "Family Pack — 12 Country Eggs",
         description: "A handy dozen for small families and weekly home use.",
         brand: { "@type": "Brand", name: "Brooeggs" },
-        offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "INR", seller: { "@type": "Organization", name: "Brooeggs" } },
+        image: "https://brooeggs.in/images/img_022.jpeg",
+        url: "https://brooeggs.in/products",
       },
     },
     {
@@ -77,7 +80,8 @@ const productsItemListSchema = {
         name: "Standard Tray — 30 Country Eggs",
         description: "Our bestselling tray. The perfect balance of quantity and value for households and small restaurants.",
         brand: { "@type": "Brand", name: "Brooeggs" },
-        offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "INR", seller: { "@type": "Organization", name: "Brooeggs" } },
+        image: "https://brooeggs.in/images/img_023.jpeg",
+        url: "https://brooeggs.in/products",
       },
     },
     {
@@ -87,7 +91,8 @@ const productsItemListSchema = {
         name: "Half Case — 90 Country Eggs",
         description: "Three trays in a box for growing families, small cafes, and weekly bulk buyers.",
         brand: { "@type": "Brand", name: "Brooeggs" },
-        offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "INR", seller: { "@type": "Organization", name: "Brooeggs" } },
+        image: "https://brooeggs.in/images/img_024.jpeg",
+        url: "https://brooeggs.in/products",
       },
     },
     {
@@ -97,7 +102,8 @@ const productsItemListSchema = {
         name: "Bulk Case — 180 Country Eggs",
         description: "Six full trays in a reinforced case. The commercial standard for restaurants, hotels, caterers, and cloud kitchens.",
         brand: { "@type": "Brand", name: "Brooeggs" },
-        offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "INR", seller: { "@type": "Organization", name: "Brooeggs" } },
+        image: "https://brooeggs.in/images/img_025.jpeg",
+        url: "https://brooeggs.in/products",
       },
     },
     {
@@ -107,7 +113,8 @@ const productsItemListSchema = {
         name: "Wholesale / Custom Order",
         description: "500+ eggs per order for distributors, retailers, and food manufacturers. Custom packaging available.",
         brand: { "@type": "Brand", name: "Brooeggs" },
-        offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "INR", seller: { "@type": "Organization", name: "Brooeggs" } },
+        image: "https://brooeggs.in/images/img_026.jpeg",
+        url: "https://brooeggs.in/products",
       },
     },
   ],

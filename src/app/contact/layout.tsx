@@ -29,9 +29,10 @@ export default function ContactLayout({ children }: { children: React.ReactNode 
   const contactBreadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": "https://brooeggs.in/contact#breadcrumb",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home",       item: "https://brooeggs.in" },
-      { "@type": "ListItem", position: 2, name: "Contact Us", item: "https://brooeggs.in/contact" },
+      { "@type": "ListItem", position: 1, name: "Home",       item: { "@id": "https://brooeggs.in", name: "Home" } },
+      { "@type": "ListItem", position: 2, name: "Contact Us", item: { "@id": "https://brooeggs.in/contact", name: "Contact Us" } },
     ],
   };
 
@@ -44,7 +45,6 @@ export default function ContactLayout({ children }: { children: React.ReactNode 
     description:
       "Contact Brooeggs to place orders for farm-fresh country chicken eggs, wholesale enquiries, or delivery questions. Call or WhatsApp +91 9865 643953.",
     isPartOf: { "@id": "https://brooeggs.in/#website" },
-    breadcrumb: { "@id": "https://brooeggs.in/contact#breadcrumb" },
   };
 
   return (
