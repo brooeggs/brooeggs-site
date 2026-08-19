@@ -95,6 +95,9 @@ export const metadata: Metadata = {
     icon: "/images/logo/logo.svg",
     apple: "/images/logo/logo.svg",
   },
+  verification: {
+    google: "JuhCIlBr6pOuh92HfJ1tRHBZrPIuURc8zS2YkcseFjI",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
