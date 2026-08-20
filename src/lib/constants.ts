@@ -100,18 +100,21 @@ export const TESTIMONIALS = [
     name: "Ramya Suresh",
     role: "Home Customer, Chennai",
     avatar: "R",
+    image: "/images/review_1.jpeg",
   },
   {
     quote: "We switched our hotel kitchen to Brooeggs six months ago. Our breakfast guests notice the difference immediately — richer taste, better texture. Highly recommended.",
     name: "Karthik Menon",
     role: "Hotel Owner, Coimbatore",
     avatar: "K",
+    image: "/images/review_2.jpeg",
   },
   {
     quote: "Delivery is always on time, the packaging is neat and the quality is rock-solid every single batch. As a nutritionist I'm confident recommending Brooeggs to all my clients.",
     name: "Priya Anand",
     role: "Nutritionist, Madurai",
     avatar: "P",
+    image: "/images/review_3.jpeg",
   },
 ] as const;
 

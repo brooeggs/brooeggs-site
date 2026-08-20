@@ -1,6 +1,17 @@
+import Image from "next/image";
 import { TESTIMONIALS } from "@/lib/constants";
 
+type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  avatar: string;
+  image?: string;
+};
+
 export default function TestimonialsSection() {
+  const testimonials = TESTIMONIALS as unknown as Testimonial[];
+
   return (
     <section className="sec-pad" style={{ background: "#FAF6EE" }}>
       <div className="container">
@@ -12,8 +23,20 @@ export default function TestimonialsSection() {
           </p>
         </div>
         <div className="testimonials-grid">
-          {TESTIMONIALS.map((t, i) => (
+          {testimonials.map((t, i) => (
             <div key={i} className="testi-card reveal reveal-up">
+              {/* Review image — top of card, bleeds edge-to-edge */}
+              {t.image && (
+                <div style={{ position: "relative", width: "calc(100% + 48px)", height: 180, margin: "-28px -24px 20px -24px", overflow: "hidden", borderRadius: "12px 12px 0 0", flexShrink: 0 }}>
+                  <Image
+                    src={t.image}
+                    alt={`${t.name} review`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+                  />
+                </div>
+              )}
               <div className="testi-quote" aria-hidden="true">&ldquo;</div>
               <div className="testi-stars" aria-label="5 stars">★★★★★</div>
               <p>&ldquo;{t.quote}&rdquo;</p>
